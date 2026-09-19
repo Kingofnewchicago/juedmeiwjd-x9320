@@ -1,0 +1,105 @@
+{
+  "project_name": "Tdata Testing Corporate Redesign",
+  "theme": "light",
+  "design_philosophy": {
+    "direction": "Klassisch & seri\u00f6s (Classic & serious). A trustworthy, established German corporate B2B aesthetic.",
+    "anti_patterns_to_avoid": [
+      "Ultra-modern feel",
+      "Bento grids",
+      "Massive typography (7xl/8xl)",
+      "Black cards or dark mode elements (except footer)",
+      "Glassmorphism or heavy blur effects",
+      "Monospace uppercase overlines",
+      "Excessive animations, floating elements, or parallax"
+    ]
+  },
+  "brand": {
+    "name": "Tdata",
+    "legal_name": "Tdata Testing",
+    "legal_entity": "MO Handel & Service, Inh. Mariusz Otok",
+    "domain": "@tdata-testing.de",
+    "logo_concept": "A classic, minimalist text-based logo. A serif 'T' in primary green next to a clean sans-serif 'data' in dark charcoal. Provide this as a purely SVG/CSS construct in the Header component. Avoid the old 'W' Webora logo."
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "background_alt": "#F4F8F4",
+    "primary": "#659A65",
+    "primary_hover": "#507D50",
+    "text_main": "#223322",
+    "text_muted": "#556655",
+    "border": "#DDE8DD",
+    "footer_bg": "#1A261A",
+    "footer_text": "#E8F0E8"
+  },
+  "typography": {
+    "heading_font": "Merriweather",
+    "body_font": "Source Sans 3",
+    "hierarchy": {
+      "h1": "text-4xl md:text-5xl font-serif text-[#223322] leading-tight tracking-normal",
+      "h2": "text-3xl md:text-4xl font-serif text-[#223322] leading-snug mb-6",
+      "h3": "text-xl md:text-2xl font-serif text-[#223322] mb-3",
+      "body": "text-base md:text-lg font-sans text-[#556655] leading-relaxed",
+      "small": "text-sm font-sans text-[#556655]"
+    }
+  },
+  "spacing_and_layout": {
+    "section_padding": "py-16 md:py-24",
+    "container": "max-w-7xl mx-auto px-6 md:px-8",
+    "grid_strategy": "Traditional structural columns. 12-column foundation. Use 1, 2, or 3 column grids (grid-cols-1 md:grid-cols-2 lg:grid-cols-3) with gap-8 or gap-12. NO bento layouts. Maintain symmetric or calm asymmetric balance."
+  },
+  "components": {
+    "buttons": "Rectangular (rounded-sm or rounded-none). Solid primary color background with white text. Minimal hover effect (darken color). Padding px-6 py-3. NO glow, NO shadows.",
+    "cards": "White background (#FFFFFF). Sharp corners or very subtle rounding (rounded-sm). 1px solid border (#DDE8DD). Flat design. On hover, maybe a very slight structural shadow (shadow-sm) or 1px border color change to primary. Content inside must have generous padding (p-8).",
+    "navbar": "Solid white background (#FFFFFF). 1px bottom border (#DDE8DD). Sticky top, but NO glassmorphism (backdrop-blur is forbidden). Clear, simple links.",
+    "footer": "Dark green background (#1A261A). Strict columnar layout. Must include 'Tdata Testing' and 'MO Handel & Service, Inh. Mariusz Otok' in the copyright/legal section.",
+    "forms": "Standard rectangular inputs. border-[#DDE8DD], focus:border-[#659A65] focus:ring-1 focus:ring-[#659A65]. left-aligned labels."
+  },
+  "motion": {
+    "strategy": "Minimal and constrained. Fade-ins on scroll only. Fast UI transitions (150ms). No bouncy or playful physics. 'Seri\u00f6s' means stable."
+  },
+  "images_and_assets": {
+    "strategy": "Professional, realistic corporate photography. Bright lighting, realistic testing environments, clean offices.",
+    "image_urls": {
+      "hero": {
+        "url": "https://images.unsplash.com/photo-1624213012413-fda54df1810f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwyfHxjb3Jwb3JhdGUlMjBvZmZpY2UlMjBidWlsZGluZyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3ODc0MDA4NDh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Corporate office building architecture for home hero"
+      },
+      "about_team": {
+        "url": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzg3NDAwODQ4fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Professional team meeting for 'Unternehmen' page"
+      },
+      "services": {
+        "url": "https://images.unsplash.com/photo-1560264280-88b68371db39?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwzfHxzb2Z0d2FyZSUyMHRlc3RpbmclMjBvZmZpY2V8ZW58MHx8fHwxNzg3NDAwODQ4fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Software testing open office for 'Dienstleistungen'"
+      },
+      "careers": {
+        "url": "https://images.pexels.com/photos/12903168/pexels-photo-12903168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Professional team collaborating, great for 'Karriere' page"
+      }
+    }
+  },
+  "pages_to_build": [
+    "Home: Hero (trust-focused text, calm background), Dienstleistungen overview, Warum Wir (checkmarks), Stats (standard size), CTA.",
+    "Unternehmen: About text, mission, team/office image.",
+    "Dienstleistungen: Detailed service list (QA, Automation, App Testing).",
+    "Karriere: Job openings list, simple standard application form.",
+    "Kontakt: Contact info, map placeholder, serious B2B contact form.",
+    "Impressum: Legal imprint (text heavy, standard layout).",
+    "Datenschutz: Privacy policy (text heavy, standard layout)."
+  ],
+  "instructions_to_main_agent": [
+    "Remove all references to Webora, replace with Tdata or Tdata Testing.",
+    "Implement the Merriweather font for headings and Source Sans 3 for body text. Do NOT use Inter, Sora, or Roboto for headings.",
+    "Strictly follow the color palette. Backgrounds should be white or #F4F8F4. No dark mode apart from the footer.",
+    "Avoid Shadcn 'Cards' if they default to heavy rounded borders and shadows. Use standard HTML/Tailwind with border, p-8, rounded-sm.",
+    "Create the specific requested pages with fully functional React Router navigation.",
+    "Do not add floating 3D elements, marquee scrollbars, or bento grids. Keep it classic and serious.",
+    "Ensure Impressum and Datenschutz contain realistic placeholders indicating Tdata Testing, MO Handel & Service, Inh. Mariusz Otok, and emails ending in @tdata-testing.de."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid the 'AI slop' aesthetic.",
+    "In this specific project, do NOT use glass-morphism or heavy shadows. Stick to the classic aesthetic.",
+    "Do not center-align long paragraphs of text. Left-align for better readability.",
+    "Include 'data-testid' attributes on all interactive elements."
+  ]
+}

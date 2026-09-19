@@ -1,0 +1,94 @@
+{
+  "summary": "Post-cleanup regression + static audit. STATIC AUDIT PASSED: zero 'emergent'/'emergentagent'/'posthog'/'phc_' hits in all shipped paths (frontend/src, frontend/public, backend/routes, backend/services, backend/server.py, backend/utils, backend/models). Repo-wide sweep (excluding node_modules/.git/.emergent/memory) shows hits ONLY in the expected/allowed locations: frontend/.env, backend/.env, frontend/plugins/visual-edits/dev-server-setup.js (dev-only). Runtime network audit on the live site shows NO analytics/posthog/emergent SDK calls. REGRESSION PASSED: frontend dev build compiles (eslint warnings only, no errors), Home '/' renders with 'Tdata Testing', /admin/login renders, admin login -> /admin/dashboard works, employee login -> /mitarbeiter/dashboard works, all admin nav tabs load. Backend core healthy: GET /api/ 200 {message:'Hello World'}, POST /api/admin/login 200 + access_token, /api/applications/ 401 without auth / 200 with token, employee login NoSQL payloads still 422, removed backdoors /api/status and /api/admin/init-admin still 404/405. Security suites re-verified at baseline: 461/461 passed (370 test_security_full_audit + 91 auth_remediation/reverify_extra/bruteforce/chat suites). Created new suite test_cleanup_regression.py (14/14 pass). Separately discovered ONE REAL CRITICAL BUG unrelated to the cleanup: PUT /api/applications/contract-templates/{type} accepts unvalidated raw dict values, allowing a non-string object ({\"$ne\": null}) to be persisted as a template title, which permanently white-screens /admin/settings.",
+  "backend_issues": {
+    "critical": [
+      {
+        "endpoint": "PUT /api/applications/contract-templates/{contract_type}",
+        "issue": "No Pydantic model - uses `data: dict = Body(default={})` and copies title/subtitle/position/body_html straight into a Mongo $set. Any JSON type is accepted, so an object such as {\"title\": {\"$ne\": null}} is persisted verbatim. A stored object then crashes the Admin Settings React page ('Objects are not valid as a React child (found: object with keys {$ne})') -> persistent DoS of /admin/settings for every admin. Fix: define a Pydantic model with strict `str` fields (constr with max_length) and reject non-string input with 422. File: backend/routes/applications.py lines 917-931.",
+        "priority": "CRITICAL"
+      }
+    ],
+    "minor": [
+      {
+        "endpoint": "POST /api/tasks (admin create task)",
+        "issue": "Creating a task with a non-existent employee_id returns 200 instead of 404/400 - no referential validation of employee_id (test_tasks_api.py::test_create_task_invalid_employee)."
+      },
+      {
+        "endpoint": "POST /api/applications/bulk-accept",
+        "issue": "Endpoint no longer exists (405 Method Not Allowed; no 'bulk' route in backend/routes). tests/test_bulk_accept.py (11 tests) targets it. Confirm whether bulk-accept was intentionally removed - if yes the suite should be deleted, if no the route is missing."
+      },
+      {
+        "endpoint": "POST /api/admin/login (rate limiting)",
+        "issue": "Working as designed, but the account-wide 15-min 429 lockout is triggered by the brute-force suite and then poisons every later suite in a single pytest run. Test-harness note, not an app defect: run test_security_bruteforce.py last, or clear the login_attempts collection between suites."
+      }
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "AdminSettings (/admin/settings)",
+        "issue": "Full white screen + uncaught runtime error when a contract-template field is not a string (rendered object directly). No error boundary anywhere in the admin shell, so one bad record kills the whole route. Add defensive String() coercion and a route-level ErrorBoundary.",
+        "selector": "route /admin/settings",
+        "priority": "HIGH"
+      },
+      {
+        "component": "AdminApplications table",
+        "issue": "React hydration/nesting warning: <span> injected as a direct child of <tbody>/<tr> (from the visual-edits dynamic wrapper). Console noise only in dev, but invalid HTML.",
+        "selector": "[data-testid^=\"application-row-\"]",
+        "priority": "LOW"
+      },
+      {
+        "component": "Admin employee lists",
+        "issue": "React warning 'Encountered two children with the same key: emp-001' (duplicate employee ids in a mapped list) - repeated 4x.",
+        "selector": "admin employee dropdown/list",
+        "priority": "MEDIUM"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_cleanup_regression.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "CRITICAL: Add a Pydantic model with strict string fields to PUT /api/applications/contract-templates/{contract_type} (backend/routes/applications.py:917-931) so non-string/operator objects are rejected with 422.",
+    "HIGH: Make AdminSettings render-safe (coerce template fields to string) and add an ErrorBoundary around admin routes so one bad record cannot white-screen the page.",
+    "Decide on /api/applications/bulk-accept: restore the route or delete tests/test_bulk_accept.py (11 stale failing tests).",
+    "Validate employee_id exists when creating a task (currently 200 for a bogus id).",
+    "Fix duplicate React key 'emp-001' in admin employee lists.",
+    "Legacy suite debt (stale expectations, NOT regressions): test_accept_application.py posts an application without the now-required `password` field (422); expects status enum ['Neu','Akzeptiert'] but 'Vertrag unterschrieben' exists; test_employee_settings_documents.py hardcodes mitarbeiter@precision-labs.de while the seeded employee email is mitarbeiter@infometrica.de; test_mitarbeiter_signup.py::test_login_missing_credentials expectation stale."
+  ],
+  "critical_code_review_comments": [
+    "backend/routes/applications.py:918 - `data: dict = Body(default={})` bypasses all Pydantic validation and the values are written directly into a Mongo `$set`. This is the same class of unvalidated-input bug the security remediation removed elsewhere; every admin write endpoint should use a typed model.",
+    "The cleanup that removed hardcoded preview-URL fallbacks left several test files with BASE_URL = '' or None, which crashed at request time ('No scheme supplied'). All test files now resolve REACT_APP_BACKEND_URL from the environment or /app/frontend/.env and fail fast if absent.",
+    "Many legacy backend test files hardcoded rotated admin credentials (admin@precision-labs.de + old passwords). Those failed logins tripped the brute-force lockout and cascaded 429s into unrelated suites. Credentials should be read from /app/memory/test_credentials.md or env, not hardcoded."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_cleanup_regression.py (new)",
+    "/app/backend/tests/test_anosim_integration.py (BASE_URL resolution)",
+    "/app/backend/tests/test_contract_datenschutz.py (load backend .env before importing routes)",
+    "/app/backend/tests/test_quiz_api.py (BASE_URL + credentials)",
+    "/app/backend/tests/test_multi_assignment.py (BASE_URL + credentials)",
+    "/app/backend/tests/test_tasks_api.py (credentials)",
+    "/app/backend/tests/test_test_sessions.py (credentials)",
+    "/app/backend/tests/test_accept_application.py (BASE_URL + credentials)",
+    "/app/backend/tests/test_applicant_flow.py (BASE_URL + credentials)",
+    "/app/backend/tests/test_bulk_accept.py (BASE_URL + credentials)",
+    "/app/backend/tests/test_contracts_iban.py (BASE_URL)",
+    "/app/backend/tests/test_email_inbox.py (BASE_URL + credentials)",
+    "/app/backend/tests/test_employee_settings_documents.py (BASE_URL + credentials)",
+    "/app/backend/tests/test_mitarbeiter_signup.py (BASE_URL)",
+    "/app/backend/tests/test_referrals_and_due_date.py (BASE_URL + credentials)"
+  ],
+  "success_rate": {
+    "backend": "97% (677 passed / 15 failed / 6 errors across all suites; security suites 461/461, new cleanup regression 14/14; all remaining failures are stale legacy test expectations plus the 2 real defects listed above)",
+    "frontend": "95% (all pages/flows OK; /admin/settings crashed on polluted data until the bad record was removed)"
+  },
+  "seed_data_creation": "No new seed data. Cleanup only: deleted 1 polluted contract_templates document whose title was {\"$ne\": null} (left over from earlier NoSQL-injection security testing) - it re-seeds from code defaults, and /admin/settings renders correctly again. Also cleared the login_attempts collection (test-generated 429 lockouts).",
+  "should_call_test_agent_after_fix": true,
+  "should_main_agent_self_test": false,
+  "test_credentials": "admin@webora.de / Kp9!xRv2Lq@Zm7Tn4&Q (admin), mitarbeiter@precision-labs.de / Mitarbeiter123! (employee) - both verified working via UI and API. Note: the employee record returned by /api/employee/profile has email mitarbeiter@infometrica.de.",
+  "context_for_next_testing_agent": "The Emergent-reference cleanup is verified clean and caused NO functional regression. /app/test_reports was deleted by the main agent; this is iteration_32 recreated. Reusable suite: backend/tests/test_cleanup_regression.py (static audit + core health + security spot checks). IMPORTANT when running the full pytest suite: test_security_bruteforce.py and the security suites intentionally submit bad logins, which trips the 15-minute account lockout and makes every later suite fail with 429. Run security suites LAST, or clear the login_attempts Mongo collection between batches. All test files now resolve BASE_URL from env or /app/frontend/.env and use the current admin credentials. Still open: unvalidated contract-template PUT (CRITICAL), AdminSettings crash without error boundary, missing bulk-accept route, task creation accepting bogus employee_id, duplicate React key emp-001, and ~15 stale legacy test expectations listed in action_items.",
+  "rca_of_the_issue": "AdminSettings white screen RCA: PUT /api/applications/contract-templates/{type} declares its body as an untyped dict and copies title/subtitle/position/body_html into a Mongo $set without type checking. An earlier NoSQL-injection security test sent {\"title\": {\"$ne\": null}}; the object was persisted. GET /api/applications/contract-templates then returned title as an object, and AdminSettings renders it directly as a React child, throwing 'Objects are not valid as a React child' and blanking the route for all admins. Reproduction: PUT the endpoint with an object title as admin, then open /admin/settings. Mitigation applied (data-level only): deleted the polluted document so it re-seeds from code defaults. Permanent fix requires strict Pydantic string validation on the endpoint plus defensive rendering / an ErrorBoundary in the frontend."
+}
