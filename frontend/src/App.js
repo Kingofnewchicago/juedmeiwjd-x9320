@@ -17,10 +17,7 @@ import AdminVerifications from "@/pages/admin/AdminVerifications";
 import AdminContracts from "@/pages/admin/AdminContracts";
 import AdminSettings from "@/pages/admin/AdminSettings";
 import AdminDokumente from "@/pages/admin/AdminDokumente";
-import AdminAnosim from "@/pages/admin/AdminAnosim";
-import AdminEmailInbox from "@/pages/admin/AdminEmailInbox";
 import AdminChat from "@/pages/admin/AdminChat";
-import AdminTestSessions from "@/pages/admin/AdminTestSessions";
 import AdminReferrals from "@/pages/admin/AdminReferrals";
 import TestSession from "@/pages/public/TestSession";
 import AdminLayout from "@/components/admin/AdminLayout";
@@ -132,41 +129,11 @@ function App() {
             }
           />
           <Route
-            path="/admin/anosim"
-            element={
-              <ProtectedRoute>
-                <AdminLayout>
-                  <AdminAnosim />
-                </AdminLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/email-inbox"
-            element={
-              <ProtectedRoute>
-                <AdminLayout>
-                  <AdminEmailInbox />
-                </AdminLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
             path="/admin/chat"
             element={
               <ProtectedRoute>
                 <AdminLayout>
                   <AdminChat />
-                </AdminLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/test-sessions"
-            element={
-              <ProtectedRoute>
-                <AdminLayout>
-                  <AdminTestSessions />
                 </AdminLayout>
               </ProtectedRoute>
             }

@@ -1,5 +1,10 @@
 # Prysm Technologies (ehemals Keyperion / Precision Labs) – PRD
 
+## 🟢 Env-Wiederherstellung + Admin-Panel Cleanup (2026-07)
+- **Container-Recovery:** Nach Container-Neustart waren `backend/.env` + `frontend/.env` sowie die DB verloren. Beide .env neu erstellt (MONGO_URL, DB_NAME=`tdata_testing`, neuer starker JWT_SECRET_KEY, Admin-Creds aus test_credentials, CORS=*, leere ANOSIM/SMSROUTE-Keys → Features inaktiv bis Nutzer Keys liefert), Frontend-Deps neu installiert. Admin + 7 Vertragsvorlagen automatisch re-geseedet. ⚠️ Alte Laufzeitdaten (Bewerbungen/Mitarbeiter/Verträge/Chat) sind verloren.
+- **Admin-Panel: 3 Seiten entfernt** (Nutzerwunsch, nicht mehr benötigt): „Anosim Nummern" (`/admin/anosim`), „E-Mail Postfächer" (`/admin/email-inbox`), „Test-Sitzungen" (`/admin/test-sessions`). Entfernt: Sidebar-Einträge + ungenutzte Icons (Phone/Mail/Timer) in `AdminLayout.jsx`, Imports + Route-Blöcke in `App.js`, Page-Dateien `AdminAnosim.jsx`/`AdminEmailInbox.jsx`/`AdminTestSessions.jsx` gelöscht. Öffentliche `/test/:token`-Seite + Backend unangetastet. Per Frontend-Testing-Agent verifiziert (Items weg, keine Crashes, restliche Nav ok).
+
+
 ## 🟢 Telegram-Reste komplett ausgebaut (2026-06)
 - Vollständig aus `routes/chat.py` entfernt: `TELEGRAM_BOT_TOKEN`/`TELEGRAM_API`-Konstanten, `send_telegram_notification()`, beide Aufrufe in `/send` + `/send-image`, ungenutzter `httpx`-Import und der verwaiste `logger`. `TELEGRAM_BOT_TOKEN` aus `backend/.env` entfernt, Collection `telegram_subscribers` gedroppt.
 - Verifiziert per Testing-Agent (**iteration_31.json**): **461/461 Backend-Tests grün** (21 Chat + 26 neue Telegram-Removal-Regression + 414 Security), 0 kritische Findings, keine Regression. Chat-Senden/-Bild/-Konversationen/-Unread + Path-Traversal-Schutz weiterhin intakt; Webhook 404.
