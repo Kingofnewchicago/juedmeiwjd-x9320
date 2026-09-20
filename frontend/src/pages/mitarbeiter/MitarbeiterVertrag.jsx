@@ -40,9 +40,9 @@ const ContractDocument = ({ contract }) => {
       {/* Parties */}
       <div className="mb-6">
         <p className="font-semibold text-gray-900 mb-2">zwischen</p>
-        <p className="text-gray-700 mb-1 font-medium">MO Handel & Service, Inh. Mariusz Otok</p>
-        <p className="text-gray-700 mb-1">Darmstädter Landstraße 60</p>
-        <p className="text-gray-700 mb-1">65462 Ginsheim-Gustavsburg</p>
+        <p className="text-gray-700 mb-1 font-medium">MORE Applications GmbH</p>
+        <p className="text-gray-700 mb-1">Heinrich-Hertz-Str. 133</p>
+        <p className="text-gray-700 mb-1">22083 Hamburg</p>
         <p className="text-gray-700 mb-1">Deutschland</p>
         <p className="text-gray-600 italic mb-4">– nachfolgend „Arbeitgeber" genannt –</p>
         
@@ -174,7 +174,7 @@ const ContractDocument = ({ contract }) => {
       {/* Footer */}
       <div className="mt-8 pt-4 border-t border-gray-200">
         <p className="text-gray-600 text-center">
-          Ginsheim-Gustavsburg, den {today}
+          Hamburg, den {today}
         </p>
       </div>
     </div>

@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 SMSROUTE_BASE_URL = "https://api.smsroute.cc"
 SMSROUTE_API_KEY = os.environ.get("SMSROUTE_API_KEY", "")
-SMSROUTE_SENDER_ID = os.environ.get("SMSROUTE_SENDER_ID", "PrecisionLab")
+SMSROUTE_SENDER_ID = os.environ.get("SMSROUTE_SENDER_ID", "MOREApps")
 
 
 def get_headers():

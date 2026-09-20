@@ -172,10 +172,10 @@ const MitarbeiterContractSign = ({ applicant, onContractSigned }) => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pb-4 border-b border-slate-200">
                   <div>
                     <p className="font-semibold text-[#0A0A0A] mb-1">{isFreelance ? 'Auftraggeber:' : 'Arbeitgeber:'}</p>
-                    <p>MO Handel & Service, Inh. Mariusz Otok</p>
-                    <p>Darmstädter Landstraße 60</p>
-                    <p>65462 Ginsheim-Gustavsburg</p>
-                    <p className="text-slate-500 mt-1">vertreten durch Mariusz Otok</p>
+                    <p>MORE Applications GmbH</p>
+                    <p>Heinrich-Hertz-Str. 133</p>
+                    <p>22083 Hamburg</p>
+                    <p className="text-slate-500 mt-1">vertreten durch Geschäftsführer Jens Olaf Brändel</p>
                   </div>
                   <div>
                     <p className="font-semibold text-[#0A0A0A] mb-1">{isFreelance ? 'Auftragnehmer:' : 'Arbeitnehmer:'}</p>
@@ -200,11 +200,11 @@ const MitarbeiterContractSign = ({ applicant, onContractSigned }) => {
 
                 {/* Signatures */}
                 <div className="pt-6 mt-6 border-t border-slate-300">
-                  <p className="text-slate-600 mb-4">Ginsheim-Gustavsburg, {signedDate}</p>
+                  <p className="text-slate-600 mb-4">Hamburg, {signedDate}</p>
                   <div className="grid grid-cols-2 gap-8">
                     <div>
                       <div className="border-b border-slate-400 pb-1 mb-1"></div>
-                      <p className="text-xs text-slate-500">Mariusz Otok</p>
+                      <p className="text-xs text-slate-500">Jens Olaf Brändel</p>
                       <p className="text-xs text-slate-500">{isFreelance ? 'Auftraggeber' : 'Arbeitgeber'}</p>
                     </div>
                     <div>
