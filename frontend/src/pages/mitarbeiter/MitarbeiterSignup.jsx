@@ -40,7 +40,7 @@ const FormField = ({ label, tooltip, icon: Icon, children }) => {
         <button
           type="button"
           onClick={() => setShowTooltip(!showTooltip)}
-          className="text-slate-400 hover:text-[#659A65] transition-colors"
+          className="text-slate-400 hover:text-[#6366F1] transition-colors"
         >
           <HelpCircle size={16} />
         </button>
@@ -156,8 +156,8 @@ const MitarbeiterSignup = () => {
         <Navbar />
         <div className="min-h-screen bg-white pt-32 pb-20">
           <div className="max-w-xl mx-auto px-6">
-            <div className="bg-[#F1F6F1] border border-[#659A65]/20 rounded-2xl p-12 text-center">
-              <div className="w-20 h-20 bg-[#659A65] rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-[#EEF1FF] border border-[#6366F1]/20 rounded-2xl p-12 text-center">
+              <div className="w-20 h-20 bg-[#6366F1] rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-10 h-10 text-white" />
               </div>
               <h2 className="text-3xl font-bold text-[#0A0A0A] mb-4">Konto erfolgreich erstellt!</h2>
@@ -166,7 +166,7 @@ const MitarbeiterSignup = () => {
               </p>
               <Link
                 to="/mitarbeiter/login"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#659A65] text-white font-semibold rounded-full hover:bg-[#659A65] transition-colors text-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#6366F1] text-white font-semibold rounded-full hover:bg-[#6366F1] transition-colors text-lg"
               >
                 Zum Login
                 <ArrowRight size={20} />
@@ -186,7 +186,7 @@ const MitarbeiterSignup = () => {
         {/* Hero Section */}
         <section className="pt-32 pb-12 px-6 bg-[#F8F9FA]">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="text-[#659A65] font-mono text-sm uppercase tracking-widest mb-4 block">Mitarbeiterbereich</span>
+            <span className="text-[#6366F1] font-mono text-sm uppercase tracking-widest mb-4 block">Mitarbeiterbereich</span>
             <h1 className="text-4xl md:text-5xl font-bold text-[#0A0A0A] mb-4">
               Konto erstellen
             </h1>
@@ -200,9 +200,9 @@ const MitarbeiterSignup = () => {
         <section className="py-16 px-6">
           <div className="max-w-2xl mx-auto">
             {/* Info Box */}
-            <div className="bg-[#F1F6F1] border border-[#659A65]/20 rounded-xl p-6 mb-8">
+            <div className="bg-[#EEF1FF] border border-[#6366F1]/20 rounded-xl p-6 mb-8">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-[#659A65] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-[#6366F1] rounded-full flex items-center justify-center flex-shrink-0">
                   <HelpCircle className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -229,7 +229,7 @@ const MitarbeiterSignup = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Max Mustermann"
-                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#659A65] focus:border-transparent transition-all bg-[#F8F9FA]"
+                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent transition-all bg-[#F8F9FA]"
                     data-testid="signup-name"
                   />
                 </FormField>
@@ -246,7 +246,7 @@ const MitarbeiterSignup = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="ihre@email.de"
-                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#659A65] focus:border-transparent transition-all bg-[#F8F9FA]"
+                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent transition-all bg-[#F8F9FA]"
                     data-testid="signup-email"
                   />
                 </FormField>
@@ -263,7 +263,7 @@ const MitarbeiterSignup = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+49 170 1234567"
-                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#659A65] focus:border-transparent transition-all bg-[#F8F9FA]"
+                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent transition-all bg-[#F8F9FA]"
                     data-testid="signup-phone"
                   />
                 </FormField>
@@ -279,7 +279,7 @@ const MitarbeiterSignup = () => {
                     name="birthday"
                     value={formData.birthday}
                     onChange={handleChange}
-                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#659A65] focus:border-transparent transition-all bg-[#F8F9FA]"
+                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent transition-all bg-[#F8F9FA]"
                     data-testid="signup-birthday"
                   />
                 </FormField>
@@ -296,7 +296,7 @@ const MitarbeiterSignup = () => {
                     value={formData.street}
                     onChange={handleChange}
                     placeholder="Musterstraße 123"
-                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#659A65] focus:border-transparent transition-all bg-[#F8F9FA]"
+                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent transition-all bg-[#F8F9FA]"
                     data-testid="signup-street"
                   />
                 </FormField>
@@ -314,7 +314,7 @@ const MitarbeiterSignup = () => {
                       value={formData.plz}
                       onChange={handleChange}
                       placeholder="12345"
-                      className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#659A65] focus:border-transparent transition-all bg-[#F8F9FA]"
+                      className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent transition-all bg-[#F8F9FA]"
                       data-testid="signup-plz"
                     />
                   </FormField>
@@ -330,7 +330,7 @@ const MitarbeiterSignup = () => {
                       value={formData.city}
                       onChange={handleChange}
                       placeholder="Berlin"
-                      className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#659A65] focus:border-transparent transition-all bg-[#F8F9FA]"
+                      className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent transition-all bg-[#F8F9FA]"
                       data-testid="signup-city"
                     />
                   </FormField>
@@ -357,7 +357,7 @@ const MitarbeiterSignup = () => {
                     value={formData.password}
                     onChange={handleChange}
                     placeholder="Mindestens 6 Zeichen"
-                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#659A65] focus:border-transparent transition-all bg-[#F8F9FA]"
+                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent transition-all bg-[#F8F9FA]"
                     data-testid="signup-password"
                   />
                 </FormField>
@@ -374,7 +374,7 @@ const MitarbeiterSignup = () => {
                     value={formData.passwordConfirm}
                     onChange={handleChange}
                     placeholder="Passwort wiederholen"
-                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#659A65] focus:border-transparent transition-all bg-[#F8F9FA]"
+                    className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent transition-all bg-[#F8F9FA]"
                     data-testid="signup-password-confirm"
                   />
                 </FormField>
@@ -391,7 +391,7 @@ const MitarbeiterSignup = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full py-4 bg-[#659A65] text-white font-semibold rounded-full hover:bg-[#659A65] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-lg shadow-lg shadow-[#659A65]/20 hover:shadow-xl hover:shadow-[#659A65]/30"
+                  className="w-full py-4 bg-[#6366F1] text-white font-semibold rounded-full hover:bg-[#6366F1] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-lg shadow-lg shadow-[#6366F1]/20 hover:shadow-xl hover:shadow-[#6366F1]/30"
                   data-testid="signup-submit"
                 >
                   {isLoading ? (
@@ -414,7 +414,7 @@ const MitarbeiterSignup = () => {
                   Bereits ein Konto?{' '}
                   <Link
                     to="/mitarbeiter/login"
-                    className="text-[#659A65] font-semibold hover:underline"
+                    className="text-[#6366F1] font-semibold hover:underline"
                   >
                     Jetzt anmelden
                   </Link>
@@ -426,7 +426,7 @@ const MitarbeiterSignup = () => {
             <div className="text-center mt-8">
               <Link
                 to="/"
-                className="inline-flex items-center gap-2 text-slate-500 hover:text-[#659A65] transition-colors"
+                className="inline-flex items-center gap-2 text-slate-500 hover:text-[#6366F1] transition-colors"
               >
                 <ArrowLeft size={18} />
                 Zurück zur Startseite

@@ -147,7 +147,7 @@ const MitarbeiterChat = () => {
       <div className="flex items-center gap-3 p-4 border-b border-gray-100">
         <Avatar name="Admin" />
         <div>
-          <p className="font-semibold text-gray-900">Tdata Testing Support</p>
+          <p className="font-semibold text-gray-900">MORE Applications Support</p>
           <p className="text-xs text-gray-500">Nachrichten an den Administrator</p>
         </div>
       </div>

@@ -102,7 +102,23 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Verify admin-panel navigation cleanup - remove three menu items (Anosim Nummern, E-Mail Postfächer, Test-Sitzungen) from sidebar and ensure removed routes don't crash"
+user_problem_statement: "Full rebrand + fundamental redesign: rename brand to MORE Applications GmbH everywhere (public site, employee panel, admin panel), new modern indigo/violet design, new logo, new Hamburg Impressum data, pivot content to software/application development. Backend contract/SMS text updated to MORE Applications GmbH (Hamburg, Geschäftsführer Jens Olaf Brändel); CONTRACT_TEMPLATE_VERSION bumped 4->5 to re-seed templates."
+
+backend:
+  - task: "Rebrand contract templates + generation to MORE Applications GmbH (Hamburg)"
+    implemented: true
+    working: true
+    file: "/app/backend/routes/applications.py, /app/backend/routes/contracts.py, /app/backend/services/sms_service.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Replaced employer entity 'MO Handel & Service, Inh. Mariusz Otok' -> 'MORE Applications GmbH', address -> Heinrich-Hertz-Str. 133, 22083 Hamburg, signatory Mariusz Otok -> Jens Olaf Brändel (Geschäftsführer), 'bei Tdata Testing' -> 'bei der MORE Applications GmbH', SMS text -> MORE Applications GmbH. Bumped CONTRACT_TEMPLATE_VERSION 4->5. Backend restarts healthy (200), templates re-seeded to v5 (DB verified: has MORE Applications, no Tdata/Mariusz/Ginsheim). Needs functional retest of: admin login, application submit (/api/applications/submit), contract templates fetch, my-contract retrieval, contract PDF/HTML download."
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED: Comprehensive backend regression test completed successfully. All 17 test cases passed: (1) Admin login works with correct credentials; (2) Application submission accepts new applications with unique emails; (3) Contract templates endpoint returns 7 templates all at version 5; (4) All templates contain 'MORE Applications GmbH' with NO old branding (Tdata/Mariusz/Ginsheim); (5) Applicant login works; (6) My-contract retrieval returns correct contract with new branding; (7) Contract signing and download works; (8) Downloaded contract HTML contains 'MORE Applications GmbH', Hamburg address (Heinrich-Hertz-Str. 133, 22083 Hamburg), and new signatory (Jens Olaf Brändel). No HTTP 500 errors encountered. Rebrand is complete and functional."
 
 frontend:
   - task: "Remove three menu items from admin sidebar"
@@ -144,16 +160,20 @@ frontend:
 metadata:
   created_by: "testing_agent"
   version: "1.0"
-  test_sequence: 1
+  test_sequence: 2
   run_ui: true
 
 test_plan:
   current_focus:
-    - "All tasks completed and verified"
+    - "Backend rebrand testing complete - all tests passed"
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
   - agent: "testing"
     message: "Admin panel navigation cleanup verification complete. All 3 removed menu items are gone from sidebar, removed routes don't crash, and remaining menu items work correctly. Minor HTML hydration warnings in AdminApplications component (non-blocking)."
+  - agent: "main"
+    message: "REBRAND to MORE Applications GmbH. Please run a FOCUSED BACKEND regression test (do not test frontend). Credentials in /app/memory/test_credentials.md (admin admin@webora.de / Kp9!xRv2Lq@Zm7Tn4&Q). Verify: (1) admin login works; (2) POST /api/applications/submit accepts a new application (use a unique email); (3) GET contract templates endpoint returns templates at template_version 5; (4) applicant login + my-contract retrieval works; (5) contract download (PDF/HTML) renders and contains 'MORE Applications GmbH' and NO 'Tdata'/'Mariusz'/'Ginsheim'. Report any 500s. This was a text-only change to contract/SMS strings + template version bump."
+  - agent: "testing"
+    message: "✅ BACKEND REBRAND VERIFICATION COMPLETE - ALL TESTS PASSED. Executed comprehensive regression test covering all 5 requested verification points plus additional checks. Results: (1) ✅ Admin login: Returns 200 + valid token; (2) ✅ Application submit: Accepts new applications with all required fields; (3) ✅ Contract templates: All 7 templates at version 5, contain 'MORE Applications GmbH', zero old branding; (4) ✅ Applicant flow: Login works, my-contract endpoint returns correct contract with new branding; (5) ✅ Contract download: Generated HTML contains 'MORE Applications GmbH', Hamburg address (Heinrich-Hertz-Str. 133, 22083 Hamburg), new signatory (Jens Olaf Brändel), NO old terms (Tdata/Mariusz/Ginsheim). No HTTP 500 errors, no stack traces, no missing endpoints. The text-only rebrand is fully functional."

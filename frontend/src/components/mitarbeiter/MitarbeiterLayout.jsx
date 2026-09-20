@@ -150,7 +150,7 @@ const MitarbeiterLayout = ({ children }) => {
             <div className="flex items-center space-x-2">
               <TdataLogo className="w-8 h-8" />
               <span className="text-lg font-bold text-gray-900">
-                Tdata Testing
+                MORE Applications
               </span>
             </div>
           )}
@@ -225,7 +225,7 @@ const MitarbeiterLayout = ({ children }) => {
               <div className="flex items-center space-x-2">
                 <TdataLogo className="w-8 h-8" />
                 <span className="text-lg font-bold text-gray-900">
-                  Tdata Testing
+                  MORE Applications
                 </span>
               </div>
               <button

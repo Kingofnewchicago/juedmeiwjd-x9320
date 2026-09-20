@@ -1,73 +1,48 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Gauge, Users, Workflow, Smartphone, Monitor, Globe, ArrowRight, Check } from 'lucide-react';
+import { Code2, Smartphone, Cloud, Palette, Boxes, LineChart, ArrowUpRight, Check } from 'lucide-react';
 
-const SERVICE_IMG = 'https://images.unsplash.com/photo-1560264280-88b68371db39?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwzfHxzb2Z0d2FyZSUyMHRlc3RpbmclMjBvZmZpY2V8ZW58MHx8fHwxNzg3NDAwODQ4fDA&ixlib=rb-4.1.0&q=85';
+const services = [
+  { icon: Code2, title: 'Web-Applikationen', desc: 'Individuelle Web-Apps, Portale und SaaS-Produkte – performant, sicher und wartbar.', points: ['React & Next.js', 'Dashboards & Portale', 'SaaS-Plattformen'] },
+  { icon: Smartphone, title: 'Mobile Apps', desc: 'Native und plattformübergreifende Apps mit exzellenter User Experience.', points: ['iOS & Android', 'Flutter / React Native', 'App-Store Deployment'] },
+  { icon: Cloud, title: 'Cloud & Backend', desc: 'Skalierbare Architekturen, APIs und Infrastruktur, die mitwachsen.', points: ['REST & GraphQL APIs', 'Microservices', 'AWS / GCP / Azure'] },
+  { icon: Palette, title: 'UI/UX Design', desc: 'Nutzerzentriertes Design von der Recherche bis zum fertigen Interface.', points: ['User Research', 'Prototyping', 'Design Systeme'] },
+  { icon: Boxes, title: 'MVP & Produkt', desc: 'Von der Idee zum marktreifen Produkt – schnell, fokussiert, validiert.', points: ['Product Discovery', 'Rapid Prototyping', 'Go-to-Market'] },
+  { icon: LineChart, title: 'Wartung & Scale', desc: 'Betrieb, Monitoring und Weiterentwicklung bestehender Anwendungen.', points: ['Monitoring & Support', 'Performance-Optimierung', 'Feature-Entwicklung'] },
+];
 
 const Dienstleistungen = () => {
-  const services = [
-    { icon: ShieldCheck, title: 'Funktionales Testing', description: 'Umfassende Überprüfung aller Funktionen Ihrer Anwendung – jeder Ablauf und jede Eingabe wird sorgfältig geprüft.', features: ['Unit Testing', 'Integrationstests', 'End-to-End Testing', 'Regressionstests'] },
-    { icon: Gauge, title: 'Performance Testing', description: 'Analyse von Geschwindigkeit, Stabilität und Skalierbarkeit – damit Ihre Anwendung auch unter Last zuverlässig bleibt.', features: ['Lasttests', 'Stresstests', 'Antwortzeit-Analyse', 'Ressourcen-Monitoring'] },
-    { icon: Users, title: 'Usability Testing', description: 'Bewertung der Benutzerfreundlichkeit aus Sicht Ihrer Anwender – für eine klare und verständliche Bedienung.', features: ['UX-Analyse', 'A/B-Tests', 'Barrierefreiheit', 'Interface-Review'] },
-    { icon: Workflow, title: 'Testautomatisierung', description: 'Wiederholbare, automatisierte Testabläufe für dauerhaft gleichbleibende Qualität und schnelle Rückmeldungen.', features: ['Selenium', 'Cypress', 'Appium', 'CI/CD-Integration'] },
-  ];
-
-  const platforms = [
-    { icon: Smartphone, title: 'Mobile Apps', desc: 'iOS & Android' },
-    { icon: Monitor, title: 'Web-Anwendungen', desc: 'Browser & Desktop' },
-    { icon: Globe, title: 'Cloud-Anwendungen', desc: 'SaaS & API' },
-  ];
-
-  const process = [
-    { step: '01', title: 'Analyse', desc: 'Anforderungen verstehen' },
-    { step: '02', title: 'Strategie', desc: 'Testplan erstellen' },
-    { step: '03', title: 'Durchführung', desc: 'Tests durchführen' },
-    { step: '04', title: 'Bericht', desc: 'Ergebnisse dokumentieren' },
-  ];
-
   return (
-    <div className="min-h-screen bg-white font-body text-[#556655]">
+    <div className="bg-white font-body text-ink/70">
       {/* Hero */}
-      <section className="bg-[#F4F8F4] border-b border-[#DDE8DD]">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="max-w-xl">
-              <div className="text-sage-700 font-semibold mb-3">Leistungen</div>
-              <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#223322] leading-tight mb-6">
-                Testing-Leistungen, die überzeugen
-              </h1>
-              <p className="text-lg leading-relaxed">
-                Von funktionalen Tests bis zur Performance-Optimierung – wir bieten
-                das komplette Spektrum professioneller Qualitätssicherung,
-                zugeschnitten auf Ihr Projekt.
-              </p>
-            </div>
-            <div className="border border-[#DDE8DD] bg-white p-2 rounded-sm">
-              <img src={SERVICE_IMG} alt="Software Testing" className="w-full h-[340px] object-cover rounded-sm" />
-            </div>
+      <section className="relative bg-ink text-white overflow-hidden">
+        <div className="absolute inset-0 more-grid-bg opacity-40" />
+        <div className="pointer-events-none absolute -top-24 left-1/3 w-[480px] h-[480px] bg-brand-600/25 blur-[130px] rounded-full" />
+        <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-28">
+          <div className="max-w-3xl">
+            <p className="text-brand-200 font-semibold mb-4">Leistungen</p>
+            <h1 className="font-heading text-5xl md:text-6xl font-bold leading-[1.05] mb-6">Alles für Ihr <span className="more-gradient-text">digitales Produkt.</span></h1>
+            <p className="text-lg text-white/60 leading-relaxed">Ein vollständiges Spektrum moderner Software-Entwicklung – abgestimmt auf Ihre Ziele, Ihr Budget und Ihre Nutzer.</p>
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-16 md:py-24">
+      {/* Services grid */}
+      <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, i) => {
-              const Icon = service.icon;
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s) => {
+              const Icon = s.icon;
               return (
-                <div key={i} className="bg-white border border-[#DDE8DD] p-8 rounded-sm hover:border-sage-400 transition-colors duration-150">
-                  <div className="w-12 h-12 bg-sage-50 border border-sage-200 rounded-sm flex items-center justify-center mb-5">
-                    <Icon className="text-sage-600" size={24} strokeWidth={1.75} />
+                <div key={s.title} className="group rounded-2xl border border-brand-100 bg-white p-8 hover:border-brand-300 hover:shadow-[0_20px_50px_-20px_rgba(79,70,229,0.35)] transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center mb-6 group-hover:bg-brand-600 transition-colors">
+                    <Icon className="text-brand-600 group-hover:text-white transition-colors" size={26} />
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-[#223322] mb-3">{service.title}</h3>
-                  <p className="mb-5 leading-relaxed">{service.description}</p>
+                  <h3 className="font-heading text-xl font-bold text-ink mb-3">{s.title}</h3>
+                  <p className="text-sm text-ink/60 leading-relaxed mb-5">{s.desc}</p>
                   <ul className="space-y-2">
-                    {service.features.map((f, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm">
-                        <Check size={16} className="text-sage-600 flex-shrink-0" />
-                        {f}
-                      </li>
+                    {s.points.map((p) => (
+                      <li key={p} className="flex items-center gap-2 text-sm text-ink/70"><Check size={15} className="text-brand-600" /> {p}</li>
                     ))}
                   </ul>
                 </div>
@@ -77,58 +52,25 @@ const Dienstleistungen = () => {
         </div>
       </section>
 
-      {/* Platforms */}
-      <section className="py-16 md:py-24 bg-[#F4F8F4] border-y border-[#DDE8DD]">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="max-w-2xl mb-12">
-            <div className="text-sage-700 font-semibold mb-3">Plattformen</div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#223322]">Alle Plattformen, ein Partner</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {platforms.map((platform, i) => {
-              const Icon = platform.icon;
-              return (
-                <div key={i} className="bg-white border border-[#DDE8DD] p-8 rounded-sm text-center">
-                  <div className="w-14 h-14 bg-sage-50 border border-sage-200 rounded-sm flex items-center justify-center mx-auto mb-5">
-                    <Icon className="text-sage-600" size={28} strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading text-lg font-bold text-[#223322] mb-1">{platform.title}</h3>
-                  <p>{platform.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="max-w-2xl mb-12">
-            <div className="text-sage-700 font-semibold mb-3">Vorgehen</div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#223322]">Strukturiert zum Ergebnis</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((item, i) => (
-              <div key={i} className="border-t-2 border-sage-500 pt-5">
-                <div className="font-heading text-3xl font-bold text-sage-600 mb-2">{item.step}</div>
-                <h3 className="font-heading text-lg font-bold text-[#223322] mb-1">{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
+      {/* Tech band */}
+      <section className="py-16 bg-brand-50/50 border-y border-brand-100">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 text-center">
+          <p className="text-brand-600 font-semibold mb-6">Unser Tech-Stack</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['React','Next.js','TypeScript','Node.js','Python','Flutter','PostgreSQL','MongoDB','AWS','Docker','GraphQL','Tailwind'].map((t) => (
+              <span key={t} className="px-4 py-2 rounded-full bg-white border border-brand-100 text-sm font-semibold text-ink/70">{t}</span>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-sage-800">
+      <section className="py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Projekt besprechen?</h2>
-          <p className="text-lg text-[#C7DBC7] mb-8">
-            Gemeinsam entwickeln wir die passende Testing-Strategie für Ihr Vorhaben.
-          </p>
-          <Link to="/kontakt" data-testid="services-contact-cta" className="inline-flex items-center gap-2 h-12 px-8 bg-white text-sage-800 font-semibold rounded-sm hover:bg-sage-50 transition-colors">
-            Kontakt aufnehmen <ArrowRight size={18} />
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-ink mb-5">Nicht sicher, wo Sie anfangen sollen?</h2>
+          <p className="text-lg text-ink/60 mb-9">Lassen Sie uns gemeinsam herausfinden, welche Lösung zu Ihrem Vorhaben passt.</p>
+          <Link to="/kontakt" className="inline-flex items-center gap-2 h-13 px-8 py-3.5 bg-ink hover:bg-brand-600 text-white font-semibold rounded-full transition-colors">
+            Kostenlos beraten lassen <ArrowUpRight size={18} />
           </Link>
         </div>
       </section>

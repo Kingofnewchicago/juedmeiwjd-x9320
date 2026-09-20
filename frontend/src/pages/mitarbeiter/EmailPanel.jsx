@@ -73,7 +73,7 @@ const EmailPanel = () => {
     return (
       <div className="bg-white rounded-xl border border-slate-200 p-6">
         <div className="flex items-center justify-center py-8">
-          <div className="w-6 h-6 border-2 border-[#659A65] border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-6 h-6 border-2 border-[#6366F1] border-t-transparent rounded-full animate-spin"></div>
         </div>
       </div>
     );
@@ -151,7 +151,7 @@ const EmailPanel = () => {
                       onClick={() => copyCode(code)}
                       className={`flex items-center gap-2 px-4 py-2 rounded-lg font-mono text-lg font-bold transition-all ${
                         copiedCode === code
-                          ? 'bg-[#659A65] text-white'
+                          ? 'bg-[#6366F1] text-white'
                           : 'bg-[#7C3AED]/10 text-[#7C3AED] hover:bg-[#7C3AED]/20'
                       }`}
                     >

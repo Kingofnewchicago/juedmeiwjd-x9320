@@ -66,7 +66,7 @@ const ContractDocument = ({ contract }) => {
         <section>
           <h3 className="font-bold text-gray-900 mb-2">§2 Tätigkeit</h3>
           <p className="text-gray-700 mb-2">
-            Der Arbeitnehmer wird als <strong>Assistent für Evaluierungen im Homeoffice</strong> bei Tdata Testing eingestellt und insbesondere mit folgenden Aufgaben betraut:
+            Der Arbeitnehmer wird als <strong>Assistent für Evaluierungen im Homeoffice</strong> bei der MORE Applications GmbH eingestellt und insbesondere mit folgenden Aufgaben betraut:
           </p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
             <li>Überprüfung von Apps und Software auf Benutzerfreundlichkeit und Mängel</li>
@@ -100,7 +100,7 @@ const ContractDocument = ({ contract }) => {
             Dem Arbeitnehmer ist bekannt, dass ein entsprechender Verzicht nur mit Wirkung für die Zukunft und bei Ausübung mehrerer geringfügiger Beschäftigungsverhältnisse nur einheitlich erklärt werden kann. Diese Erklärung bindet den Arbeitnehmer für die Dauer der jeweiligen Beschäftigungen.
           </p>
           <p className="text-gray-700">
-            Die Tätigkeit erfolgt bei Tdata Testing im Homeoffice.
+            Die Tätigkeit erfolgt bei der MORE Applications GmbH im Homeoffice.
           </p>
         </section>
 
@@ -404,7 +404,7 @@ const MitarbeiterVertrag = () => {
               <li>• Lesen Sie den Vertrag sorgfältig durch bevor Sie unterschreiben</li>
               <li>• Ihre digitale Unterschrift ist rechtlich bindend</li>
               <li>• Nach der Unterschrift können Sie den Vertrag als PDF herunterladen</li>
-              <li>• Bei Fragen wenden Sie sich an hr@tdata-testing.de</li>
+              <li>• Bei Fragen wenden Sie sich an hr@more-applications.de</li>
             </ul>
           </div>
         </div>

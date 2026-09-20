@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useId } from 'react';
 
-// Classic, serious emblem for the "Tdata" brand (public site + employee panel):
-// a calm sage-green square with a serif "T".
-export const TdataLogo = ({ className = "" }) => {
+// Modern brand mark for "MORE Applications GmbH":
+// a rounded square with an indigo→cyan gradient and a geometric white "M".
+export const MoreLogo = ({ className = "" }) => {
+  const rawId = useId();
+  const gid = rawId.replace(/:/g, '');
   return (
     <svg
       className={className}
@@ -10,17 +12,31 @@ export const TdataLogo = ({ className = "" }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Tdata"
+      aria-label="MORE Applications"
     >
-      <rect x="10" y="10" width="180" height="180" rx="14" fill="#659A65" />
-      <rect x="10" y="10" width="180" height="180" rx="14" fill="none" stroke="#507D50" strokeWidth="3" />
-      <g fill="#FFFFFF">
-        <rect x="46" y="52" width="108" height="20" rx="2" />
-        <rect x="90" y="52" width="20" height="96" rx="2" />
-        <rect x="74" y="140" width="52" height="12" rx="2" />
-        <rect x="46" y="52" width="12" height="16" rx="2" />
-        <rect x="142" y="52" width="12" height="16" rx="2" />
-      </g>
+      <defs>
+        <linearGradient id={`g-${gid}`} x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#6366F1" />
+          <stop offset="0.55" stopColor="#4F46E5" />
+          <stop offset="1" stopColor="#22D3EE" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="184" height="184" rx="42" fill={`url(#g-${gid})`} />
+      {/* Geometric "M" */}
+      <path
+        d="M52 146 V70 L100 116 L148 70 V146"
+        fill="none"
+        stroke="#FFFFFF"
+        strokeWidth="18"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+      {/* app dot */}
+      <circle cx="100" cy="150" r="9" fill="#A5F3FC" />
     </svg>
   );
 };
+
+// Backward-compatible alias so all existing imports keep working after the rebrand.
+export const TdataLogo = MoreLogo;
+export default MoreLogo;

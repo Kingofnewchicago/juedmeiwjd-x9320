@@ -48,7 +48,7 @@ const VollzeitBody = ({ signedDate }) => (
     </div>
     <div>
       <p className="font-bold text-[#0A0A0A]">§2 Tätigkeit</p>
-      <p>Der Arbeitnehmer wird bei Tdata Testing als <strong>Mitarbeiter in der Verifikations Testung</strong> im Homeoffice eingestellt und vor allem mit folgenden Aufgaben beschäftigt:</p>
+      <p>Der Arbeitnehmer wird bei der MORE Applications GmbH als <strong>Mitarbeiter in der Verifikations Testung</strong> im Homeoffice eingestellt und vor allem mit folgenden Aufgaben beschäftigt:</p>
       <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
         <li>Durchführung von Video-Identifikationsverfahren zur Evaluierung und Testung</li>
         <li>Überprüfung von Apps und Softwares auf Benutzerfreundlichkeit und Mängel</li>
@@ -131,7 +131,7 @@ const TeilzeitBody = ({ signedDate }) => (
     </div>
     <div>
       <p className="font-bold text-[#0A0A0A]">§2 Tätigkeit</p>
-      <p>Der Arbeitnehmer wird bei Tdata Testing als <strong>Mitarbeiter/in in der Daten- und Produktprüfung</strong> eingestellt. Die Tätigkeit umfasst insbesondere:</p>
+      <p>Der Arbeitnehmer wird bei der MORE Applications GmbH als <strong>Mitarbeiter/in in der Daten- und Produktprüfung</strong> eingestellt. Die Tätigkeit umfasst insbesondere:</p>
       <TaskList />
       <p className="mt-2">Die Tätigkeit erfolgt 100 % im Homeoffice (mobiles Arbeiten). Der Arbeitnehmer stellt einen geeigneten Arbeitsplatz mit Internetzugang zur Verfügung. Der Arbeitgeber stellt die erforderlichen Testzugänge und Softwarelizenzen bereit.</p>
     </div>
@@ -217,7 +217,7 @@ const MinijobBody = ({ signedDate }) => (
     </div>
     <div>
       <p className="font-bold text-[#0A0A0A]">§2 Tätigkeit</p>
-      <p>Der Arbeitnehmer wird bei Tdata Testing als <strong>Mitarbeiter/in in der Daten- und Produktprüfung</strong> eingestellt. Die Tätigkeit umfasst insbesondere:</p>
+      <p>Der Arbeitnehmer wird bei der MORE Applications GmbH als <strong>Mitarbeiter/in in der Daten- und Produktprüfung</strong> eingestellt. Die Tätigkeit umfasst insbesondere:</p>
       <TaskList />
       <p className="mt-2">Die Tätigkeit erfolgt 100 % im Homeoffice (mobiles Arbeiten). Der Arbeitnehmer stellt einen geeigneten Arbeitsplatz mit Internetzugang zur Verfügung. Der Arbeitgeber stellt die erforderlichen Testzugänge und Softwarelizenzen bereit.</p>
     </div>

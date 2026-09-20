@@ -230,7 +230,7 @@ const MitarbeiterQuiz = ({ applicant, onQuizCompleted }) => {
           <TdataLogo className="w-10 h-10" />
           <div>
             <h1 className="text-lg font-bold text-gray-900">
-              Tdata Testing
+              MORE Applications
             </h1>
             <p className="text-xs text-gray-500">Einführungs-Quiz</p>
           </div>

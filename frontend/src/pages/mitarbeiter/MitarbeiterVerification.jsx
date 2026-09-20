@@ -78,7 +78,7 @@ const MitarbeiterVerification = ({ applicant, onVerificationComplete }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F1F6F1] via-white to-[#E3EDE3] flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-[#EEF1FF] via-white to-[#E0E4FF] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-2xl">
         {/* Header */}
         <div className="text-center mb-8">
@@ -111,21 +111,21 @@ const MitarbeiterVerification = ({ applicant, onVerificationComplete }) => {
         {/* Progress Steps */}
         <div className="flex items-center justify-center gap-4 mb-8">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-[#659A65] text-white flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 rounded-full bg-[#6366F1] text-white flex items-center justify-center text-sm font-bold">
               <CheckCircle size={16} />
             </div>
-            <span className="text-sm text-[#659A65] font-medium">Bewerbung akzeptiert</span>
+            <span className="text-sm text-[#6366F1] font-medium">Bewerbung akzeptiert</span>
           </div>
-          <div className="w-8 h-px bg-[#659A65]"></div>
+          <div className="w-8 h-px bg-[#6366F1]"></div>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-[#659A65] text-white flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 rounded-full bg-[#6366F1] text-white flex items-center justify-center text-sm font-bold">
               <CheckCircle size={16} />
             </div>
-            <span className="text-sm text-[#659A65] font-medium">Vertrag unterschrieben</span>
+            <span className="text-sm text-[#6366F1] font-medium">Vertrag unterschrieben</span>
           </div>
-          <div className="w-8 h-px bg-[#659A65]"></div>
+          <div className="w-8 h-px bg-[#6366F1]"></div>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-[#659A65] text-white flex items-center justify-center text-sm font-bold">3</div>
+            <div className="w-8 h-8 rounded-full bg-[#6366F1] text-white flex items-center justify-center text-sm font-bold">3</div>
             <span className="text-sm text-[#0A0A0A] font-medium">ID-Verifizierung</span>
           </div>
         </div>
@@ -173,7 +173,7 @@ const MitarbeiterVerification = ({ applicant, onVerificationComplete }) => {
         {/* Upload Section */}
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-8">
           <h2 className="text-lg font-semibold text-[#0A0A0A] mb-6 flex items-center gap-2">
-            <FileImage className="text-[#659A65]" size={20} />
+            <FileImage className="text-[#6366F1]" size={20} />
             Ausweisdokumente hochladen
           </h2>
 
@@ -186,8 +186,8 @@ const MitarbeiterVerification = ({ applicant, onVerificationComplete }) => {
               <div
                 className={`relative border-2 border-dashed rounded-xl p-6 text-center transition-colors cursor-pointer ${
                   frontPreview 
-                    ? 'border-[#659A65] bg-[#F1F6F1]' 
-                    : 'border-slate-300 hover:border-[#659A65] hover:bg-slate-50'
+                    ? 'border-[#6366F1] bg-[#EEF1FF]' 
+                    : 'border-slate-300 hover:border-[#6366F1] hover:bg-slate-50'
                 }`}
                 onClick={() => document.getElementById('front-upload').click()}
               >
@@ -198,7 +198,7 @@ const MitarbeiterVerification = ({ applicant, onVerificationComplete }) => {
                       alt="Vorderseite"
                       className="max-h-32 mx-auto rounded-lg shadow-md"
                     />
-                    <p className="text-sm text-[#659A65] font-medium flex items-center justify-center gap-1">
+                    <p className="text-sm text-[#6366F1] font-medium flex items-center justify-center gap-1">
                       <CheckCircle size={16} /> Hochgeladen
                     </p>
                   </div>
@@ -228,8 +228,8 @@ const MitarbeiterVerification = ({ applicant, onVerificationComplete }) => {
               <div
                 className={`relative border-2 border-dashed rounded-xl p-6 text-center transition-colors cursor-pointer ${
                   backPreview 
-                    ? 'border-[#659A65] bg-[#F1F6F1]' 
-                    : 'border-slate-300 hover:border-[#659A65] hover:bg-slate-50'
+                    ? 'border-[#6366F1] bg-[#EEF1FF]' 
+                    : 'border-slate-300 hover:border-[#6366F1] hover:bg-slate-50'
                 }`}
                 onClick={() => document.getElementById('back-upload').click()}
               >
@@ -240,7 +240,7 @@ const MitarbeiterVerification = ({ applicant, onVerificationComplete }) => {
                       alt="Rückseite"
                       className="max-h-32 mx-auto rounded-lg shadow-md"
                     />
-                    <p className="text-sm text-[#659A65] font-medium flex items-center justify-center gap-1">
+                    <p className="text-sm text-[#6366F1] font-medium flex items-center justify-center gap-1">
                       <CheckCircle size={16} /> Hochgeladen
                     </p>
                   </div>
@@ -266,7 +266,7 @@ const MitarbeiterVerification = ({ applicant, onVerificationComplete }) => {
           <Button
             onClick={handleSubmit}
             disabled={!frontImage || !backImage || isUploading}
-            className="w-full h-14 bg-[#659A65] hover:bg-[#507D50] text-white text-lg font-semibold rounded-xl"
+            className="w-full h-14 bg-[#6366F1] hover:bg-[#4F46E5] text-white text-lg font-semibold rounded-xl"
             data-testid="verification-submit-btn"
           >
             {isUploading ? (
@@ -285,7 +285,7 @@ const MitarbeiterVerification = ({ applicant, onVerificationComplete }) => {
 
         {/* Footer */}
         <p className="text-center text-sm text-slate-500 mt-6">
-          © 2026 Tdata Testing. Alle Rechte vorbehalten.
+          © 2026 MORE Applications GmbH. Alle Rechte vorbehalten.
         </p>
       </div>
     </div>

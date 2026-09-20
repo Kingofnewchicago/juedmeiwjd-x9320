@@ -64,7 +64,7 @@ const AdminLogin = () => {
             <TdataLogo className="w-16 h-16" />
             <div className="text-left">
               <h1 className="text-2xl font-bold text-[#c0caf5]">
-                Tdata Testing
+                MORE Applications
               </h1>
               <p className="text-sm text-[#565f89]">Admin Portal</p>
             </div>
@@ -150,7 +150,7 @@ const AdminLogin = () => {
 
         {/* Footer */}
         <p className="text-center text-sm text-[#565f89] mt-6">
-          © 2026 Tdata Testing. Alle Rechte vorbehalten.
+          © 2026 MORE Applications GmbH. Alle Rechte vorbehalten.
         </p>
       </div>
     </div>

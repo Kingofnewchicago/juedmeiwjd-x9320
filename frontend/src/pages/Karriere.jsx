@@ -107,60 +107,62 @@ const Karriere = () => {
   };
 
   const openPositions = [
-    { title: 'Web Application Tester', location: 'Remote / Homeoffice', type: 'Minijob', description: 'Assistent für Evaluierungen im Homeoffice – Überprüfung von Apps und Software.', requirements: ['Interesse an App- und Software-Testing', 'Zuverlässige und selbstständige Arbeitsweise', 'Gute Deutschkenntnisse', 'PC/Laptop und stabile Internetverbindung'] },
-    { title: 'QA Engineer', location: 'Remote / Deutschland', type: 'Vollzeit', description: 'QA Engineer für spannende Testing-Projekte gesucht.', requirements: ['Grundkenntnisse im Software Testing', 'Interesse an Testautomatisierung', 'Teamfähigkeit und Kommunikationsstärke', 'Gute Deutschkenntnisse'] },
-    { title: 'Mobile App Tester', location: 'Remote / Deutschland', type: 'Vollzeit / Teilzeit', description: 'Tester für iOS und Android Apps.', requirements: ['Eigenes Smartphone (iOS oder Android)', 'Interesse an mobilen Apps', 'Genaue und strukturierte Arbeitsweise', 'Keine Vorkenntnisse erforderlich'] },
-    { title: 'Junior Test Analyst', location: 'Remote / Deutschland', type: 'Vollzeit', description: 'Einstiegsposition für motivierte Testing-Einsteiger.', requirements: ['Keine Berufserfahrung notwendig', 'Lernbereitschaft und Neugier', 'Analytisches Denken', 'Gute Deutschkenntnisse'] },
-    { title: 'Werkstudent Testing', location: 'Remote / Deutschland', type: 'Teilzeit', description: 'Idealer Nebenjob für Studierende.', requirements: ['Eingeschriebener Student (m/w/d)', 'Flexible Zeiteinteilung möglich', 'Interesse an Softwarequalität', 'Grundlegende PC-Kenntnisse'] },
+    { title: 'Frontend Developer (React)', location: 'Hamburg / Remote', type: 'Vollzeit', description: 'Du baust moderne, performante Interfaces mit React & TypeScript.', requirements: ['Sehr gute React- und JavaScript-Kenntnisse', 'Erfahrung mit TypeScript & modernen Build-Tools', 'Gespür für UI/UX und sauberen Code', 'Teamfähigkeit und selbstständige Arbeitsweise'] },
+    { title: 'Backend Developer (Node/Python)', location: 'Hamburg / Remote', type: 'Vollzeit', description: 'Du entwickelst skalierbare APIs und robuste Backend-Services.', requirements: ['Erfahrung mit Node.js oder Python', 'Kenntnisse in REST/GraphQL & Datenbanken', 'Verständnis von Cloud & Deployment', 'Gute Deutsch- oder Englischkenntnisse'] },
+    { title: 'Mobile App Developer (iOS/Android)', location: 'Hamburg / Remote', type: 'Vollzeit / Teilzeit', description: 'Du entwickelst native oder plattformübergreifende Apps.', requirements: ['Erfahrung mit Flutter, React Native oder nativer Entwicklung', 'Verständnis von App-Store-Prozessen', 'Blick für Performance und Details', 'Eigenverantwortliche Arbeitsweise'] },
+    { title: 'UI/UX Designer', location: 'Hamburg / Remote', type: 'Vollzeit', description: 'Du gestaltest durchdachte, nutzerzentrierte Produkte.', requirements: ['Sicherer Umgang mit Figma', 'Erfahrung mit Design-Systemen & Prototyping', 'Portfolio mit digitalen Produkten', 'Verständnis für Frontend-Umsetzung'] },
+    { title: 'Werkstudent Softwareentwicklung', location: 'Hamburg / Remote', type: 'Teilzeit', description: 'Idealer Einstieg für Studierende in echte Projekte.', requirements: ['Eingeschriebener Student (m/w/d)', 'Erste Programmiererfahrung', 'Lernbereitschaft und Neugier', 'Flexible Zeiteinteilung'] },
   ];
 
   const benefits = [
     { icon: TrendingUp, title: 'Entwicklung', description: 'Individuelle Weiterbildung und Zertifizierungen' },
-    { icon: Users, title: 'Gutes Team', description: 'Zusammenarbeit mit erfahrenen Experten' },
+    { icon: Users, title: 'Starkes Team', description: 'Zusammenarbeit mit erfahrenen Entwicklern & Designern' },
     { icon: Coffee, title: 'Work-Life-Balance', description: 'Flexible Arbeitszeiten und Homeoffice' },
     { icon: Heart, title: 'Gesundheit', description: 'Betriebliche Zusatzleistungen' },
-    { icon: GraduationCap, title: 'Weiterbildung', description: 'Schulungen zu Testing-Methoden' },
-    { icon: Briefcase, title: 'Moderne Tools', description: 'Aktuelle Testing-Technologien' },
+    { icon: GraduationCap, title: 'Modernes Setup', description: 'Aktuelle Hardware und Tools deiner Wahl' },
+    { icon: Briefcase, title: 'Echte Projekte', description: 'Spannende Produkte für echte Kunden' },
   ];
 
-  const inputBase = 'h-12 border-[#DDE8DD] focus-visible:ring-sage-500';
+  const inputBase = 'h-12 border-brand-100 focus-visible:ring-brand-500';
 
   return (
-    <div className="min-h-screen bg-white font-body text-[#556655]">
+    <div className="bg-white font-body text-ink/70">
       {/* Hero */}
-      <section className="bg-[#F4F8F4] border-b border-[#DDE8DD]">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
-          <div className="max-w-2xl">
-            <div className="text-sage-700 font-semibold mb-3">Karriere bei Tdata Testing</div>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#223322] leading-tight mb-4">
-              Werden Sie Teil unseres Teams
+      <section className="relative bg-ink text-white overflow-hidden">
+        <div className="absolute inset-0 more-grid-bg opacity-40" />
+        <div className="pointer-events-none absolute -top-24 right-1/4 w-[440px] h-[440px] bg-brand-600/30 blur-[130px] rounded-full" />
+        <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-28">
+          <div className="max-w-3xl">
+            <p className="text-brand-200 font-semibold mb-4">Karriere bei MORE Applications</p>
+            <h1 className="font-heading text-5xl md:text-6xl font-bold leading-[1.05] mb-6">
+              Baue mit uns die <span className="more-gradient-text">Zukunft.</span>
             </h1>
-            <p className="text-lg leading-relaxed">
-              Arbeiten Sie mit erfahrenen Testexperten und gestalten Sie
-              Softwarequalität mit. Bei Tdata Testing erwarten Sie strukturierte
-              Projekte und gute Entwicklungsmöglichkeiten.
+            <p className="text-lg text-white/60 leading-relaxed">
+              Werde Teil eines Teams, das moderne Software mit Sorgfalt und
+              Leidenschaft entwickelt. Bei MORE Applications erwarten dich echte
+              Projekte, flache Hierarchien und viel Raum für deine Ideen.
             </p>
           </div>
         </div>
       </section>
 
       {/* Benefits */}
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="max-w-2xl mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#223322] mb-3">Warum Tdata Testing?</h2>
-            <p className="text-lg">Was Sie bei uns erwartet.</p>
+            <h2 className="font-heading text-4xl font-bold text-ink mb-3">Warum MORE Applications?</h2>
+            <p className="text-lg text-ink/60">Was dich bei uns erwartet.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, i) => {
               const Icon = benefit.icon;
               return (
-                <div key={i} className="bg-white border border-[#DDE8DD] p-8 rounded-sm hover:border-sage-400 transition-colors duration-150">
-                  <div className="w-12 h-12 bg-sage-50 border border-sage-200 rounded-sm flex items-center justify-center mb-5">
-                    <Icon className="text-sage-600" size={24} strokeWidth={1.75} />
+                <div key={i} className="bg-white border border-brand-100 p-8 rounded-2xl hover:border-brand-300 transition-colors duration-200">
+                  <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-5">
+                    <Icon className="text-brand-600" size={24} strokeWidth={1.75} />
                   </div>
-                  <h3 className="font-heading text-lg font-bold text-[#223322] mb-2">{benefit.title}</h3>
-                  <p>{benefit.description}</p>
+                  <h3 className="font-heading text-lg font-bold text-ink mb-2">{benefit.title}</h3>
+                  <p className="text-ink/60">{benefit.description}</p>
                 </div>
               );
             })}
@@ -169,35 +171,35 @@ const Karriere = () => {
       </section>
 
       {/* Open Positions */}
-      <section className="py-16 md:py-24 bg-[#F4F8F4] border-y border-[#DDE8DD]">
+      <section className="py-20 md:py-24 bg-brand-50/50 border-y border-brand-100">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="max-w-2xl mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#223322] mb-3">Offene Stellen</h2>
-            <p className="text-lg">Finden Sie Ihre passende Position in unserem Team.</p>
+            <h2 className="font-heading text-4xl font-bold text-ink mb-3">Offene Stellen</h2>
+            <p className="text-lg text-ink/60">Finde deine passende Position in unserem Team.</p>
           </div>
           <div className="space-y-6">
             {openPositions.map((position, i) => (
-              <div key={i} className="bg-white border border-[#DDE8DD] p-8 rounded-sm">
+              <div key={i} className="bg-white border border-brand-100 p-8 rounded-2xl">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="flex-1">
-                    <h3 className="font-heading text-xl font-bold text-[#223322] mb-3">{position.title}</h3>
+                    <h3 className="font-heading text-xl font-bold text-ink mb-3">{position.title}</h3>
                     <div className="flex flex-wrap gap-4 mb-4 text-sm">
-                      <div className="flex items-center"><MapPin size={16} className="mr-2 text-sage-600" />{position.location}</div>
-                      <div className="flex items-center"><Clock size={16} className="mr-2 text-sage-600" />{position.type}</div>
+                      <div className="flex items-center"><MapPin size={16} className="mr-2 text-brand-600" />{position.location}</div>
+                      <div className="flex items-center"><Clock size={16} className="mr-2 text-brand-600" />{position.type}</div>
                     </div>
-                    <p className="mb-4">{position.description}</p>
-                    <h4 className="font-semibold text-[#223322] mb-2">Anforderungen:</h4>
+                    <p className="mb-4 text-ink/60">{position.description}</p>
+                    <h4 className="font-semibold text-ink mb-2">Anforderungen:</h4>
                     <ul className="space-y-2">
                       {position.requirements.map((req, idx) => (
                         <li key={idx} className="flex items-start text-sm">
-                          <Check className="text-sage-600 mr-2 flex-shrink-0 mt-0.5" size={16} />
+                          <Check className="text-brand-600 mr-2 flex-shrink-0 mt-0.5" size={16} />
                           <span>{req}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <a href="#bewerbung" className="inline-flex items-center justify-center px-6 py-3 bg-sage-600 text-white rounded-sm font-semibold hover:bg-sage-700 transition-colors whitespace-nowrap">
+                    <a href="#bewerbung" className="inline-flex items-center justify-center px-6 py-3 bg-ink text-white rounded-full font-semibold hover:bg-brand-600 transition-colors whitespace-nowrap">
                       Jetzt bewerben
                     </a>
                   </div>
@@ -209,23 +211,23 @@ const Karriere = () => {
       </section>
 
       {/* Application Form */}
-      <section id="bewerbung" className="py-16 md:py-24">
+      <section id="bewerbung" className="py-20 md:py-24">
         <div className="max-w-3xl mx-auto px-6 md:px-8">
           <div className="mb-10">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#223322] mb-3">Jetzt bewerben</h2>
-            <p className="text-lg">Senden Sie uns Ihre Unterlagen – wir melden uns zeitnah bei Ihnen.</p>
+            <h2 className="font-heading text-4xl font-bold text-ink mb-3">Jetzt bewerben</h2>
+            <p className="text-lg text-ink/60">Sende uns deine Unterlagen – wir melden uns zeitnah bei dir.</p>
           </div>
 
-          <div className="bg-white border border-[#DDE8DD] p-8 md:p-10 rounded-sm">
+          <div className="bg-white border border-brand-100 p-8 md:p-10 rounded-2xl shadow-[0_20px_60px_-30px_rgba(79,70,229,0.35)]">
             {referralSlug && (
-              <div className="mb-6 px-4 py-3 rounded-sm bg-sage-50 border border-sage-200 text-sm text-sage-800" data-testid="referral-banner">
-                Sie bewerben sich über{referralName ? ` „${referralName}"` : ''} (<span className="font-mono">{referralSlug}</span>)
+              <div className="mb-6 px-4 py-3 rounded-xl bg-brand-50 border border-brand-200 text-sm text-brand-800" data-testid="referral-banner">
+                Du bewirbst dich über{referralName ? ` „${referralName}"` : ''} (<span className="font-mono">{referralSlug}</span>)
               </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Persönliche Daten */}
               <div>
-                <h3 className="font-heading text-lg font-bold text-[#223322] mb-4 pb-2 border-b border-[#DDE8DD]">Persönliche Daten</h3>
+                <h3 className="font-heading text-lg font-bold text-ink mb-4 pb-2 border-b border-brand-100">Persönliche Daten</h3>
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -256,16 +258,16 @@ const Karriere = () => {
 
               {/* Zugangsdaten */}
               <div>
-                <h3 className="font-heading text-lg font-bold text-[#223322] mb-4 pb-2 border-b border-[#DDE8DD] flex items-center gap-2">
-                  <Lock className="text-sage-600" size={18} /> Zugangsdaten
+                <h3 className="font-heading text-lg font-bold text-ink mb-4 pb-2 border-b border-brand-100 flex items-center gap-2">
+                  <Lock className="text-brand-600" size={18} /> Zugangsdaten
                 </h3>
-                <p className="text-sm mb-4">Mit diesen Daten können Sie sich einloggen und den Status Ihrer Bewerbung verfolgen.</p>
+                <p className="text-sm mb-4 text-ink/60">Mit diesen Daten kannst du dich einloggen und den Status deiner Bewerbung verfolgen.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="password">Passwort wählen *</Label>
                     <div className="relative">
                       <Input id="password" name="password" type={showPassword ? 'text' : 'password'} value={formData.password} onChange={handleChange} placeholder="Mindestens 8 Zeichen" required minLength={8} className={`${inputBase} pr-10`} data-testid="karriere-password" />
-                      <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-3 text-[#8FA98F] hover:text-[#556655]">
+                      <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-3 text-brand-400 hover:text-brand-600">
                         {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                       </button>
                     </div>
@@ -279,7 +281,7 @@ const Karriere = () => {
 
               {/* Anschrift */}
               <div>
-                <h3 className="font-heading text-lg font-bold text-[#223322] mb-4 pb-2 border-b border-[#DDE8DD]">Anschrift</h3>
+                <h3 className="font-heading text-lg font-bold text-ink mb-4 pb-2 border-b border-brand-100">Anschrift</h3>
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="strasse">Straße und Hausnummer *</Label>
@@ -288,11 +290,11 @@ const Karriere = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="postleitzahl">Postleitzahl *</Label>
-                      <Input id="postleitzahl" name="postleitzahl" value={formData.postleitzahl} onChange={handleChange} placeholder="10115" required maxLength={5} className={inputBase} />
+                      <Input id="postleitzahl" name="postleitzahl" value={formData.postleitzahl} onChange={handleChange} placeholder="20095" required maxLength={5} className={inputBase} />
                     </div>
                     <div className="space-y-2 sm:col-span-2">
                       <Label htmlFor="stadt">Stadt / Ort *</Label>
-                      <Input id="stadt" name="stadt" value={formData.stadt} onChange={handleChange} placeholder="Berlin" required className={inputBase} />
+                      <Input id="stadt" name="stadt" value={formData.stadt} onChange={handleChange} placeholder="Hamburg" required className={inputBase} />
                     </div>
                   </div>
                 </div>
@@ -300,24 +302,24 @@ const Karriere = () => {
 
               {/* Bewerbungsdetails */}
               <div>
-                <h3 className="font-heading text-lg font-bold text-[#223322] mb-4 pb-2 border-b border-[#DDE8DD]">Bewerbungsdetails</h3>
+                <h3 className="font-heading text-lg font-bold text-ink mb-4 pb-2 border-b border-brand-100">Bewerbungsdetails</h3>
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="position">Gewünschte Position *</Label>
-                    <Input id="position" name="position" value={formData.position} onChange={handleChange} placeholder="z. B. QA Engineer" required className={inputBase} />
+                    <Input id="position" name="position" value={formData.position} onChange={handleChange} placeholder="z. B. Frontend Developer" required className={inputBase} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="cv">Lebenslauf / CV *</Label>
                     <div className="relative">
                       <Input id="cv" name="cv" type="file" onChange={handleFileChange} accept=".pdf,.doc,.docx" required className={`${inputBase} cursor-pointer`} />
-                      <Upload className="absolute right-3 top-3 text-[#8FA98F] pointer-events-none" size={20} />
+                      <Upload className="absolute right-3 top-3 text-brand-400 pointer-events-none" size={20} />
                     </div>
-                    <p className="text-sm text-[#8FA98F]">PDF, DOC oder DOCX (max. 5 MB)</p>
+                    <p className="text-sm text-ink/45">PDF, DOC oder DOCX (max. 5 MB)</p>
                   </div>
                 </div>
               </div>
 
-              <Button type="submit" disabled={isSubmitting} data-testid="karriere-submit" className="w-full h-14 bg-sage-600 hover:bg-sage-700 text-white text-base font-semibold rounded-sm transition-colors">
+              <Button type="submit" disabled={isSubmitting} data-testid="karriere-submit" className="w-full h-14 bg-ink hover:bg-brand-600 text-white text-base font-semibold rounded-full transition-colors">
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div> Wird gesendet...
@@ -329,70 +331,60 @@ const Karriere = () => {
             </form>
           </div>
 
-          <div className="mt-6 text-sm text-center">
-            Mit dem Absenden Ihrer Bewerbung stimmen Sie unserer{' '}
-            <Link to="/datenschutz" className="text-sage-700 underline">Datenschutzerklärung</Link> zu.
+          <div className="mt-6 text-sm text-center text-ink/60">
+            Mit dem Absenden deiner Bewerbung stimmst du unserer{' '}
+            <Link to="/datenschutz" className="text-brand-700 underline">Datenschutzerklärung</Link> zu.
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 md:py-20 bg-sage-800">
-        <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Fragen zur Karriere?</h2>
-          <p className="text-lg text-[#C7DBC7] mb-8">Unser Team beantwortet gerne Ihre Fragen rund um Bewerbung und Einstieg.</p>
-          <Link to="/kontakt" className="inline-flex items-center justify-center h-12 px-8 bg-white text-sage-800 font-semibold rounded-sm hover:bg-sage-50 transition-colors">
-            Team kontaktieren
-          </Link>
         </div>
       </section>
 
       {/* Success Modal */}
       {showSuccessModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-sm max-w-lg w-full shadow-xl overflow-hidden border border-[#DDE8DD]">
-            <div className="bg-sage-700 p-6 text-white text-center relative">
-              <button onClick={() => setShowSuccessModal(false)} className="absolute top-4 right-4 p-1 hover:bg-white/20 rounded-sm transition-colors">
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl overflow-hidden border border-brand-100">
+            <div className="bg-ink p-6 text-white text-center relative overflow-hidden">
+              <div className="absolute inset-0 more-grid-bg opacity-30" />
+              <button onClick={() => setShowSuccessModal(false)} className="absolute top-4 right-4 p-1 hover:bg-white/20 rounded-lg transition-colors z-10">
                 <X size={20} />
               </button>
-              <div className="w-14 h-14 bg-white/15 rounded-sm flex items-center justify-center mx-auto mb-4">
+              <div className="relative w-14 h-14 bg-brand-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <CheckCircle size={30} className="text-white" />
               </div>
-              <h3 className="font-heading text-2xl font-bold">Bewerbung erfolgreich!</h3>
-              <p className="text-[#C7DBC7] mt-2">Vielen Dank für Ihr Interesse an Tdata Testing</p>
+              <h3 className="relative font-heading text-2xl font-bold">Bewerbung erfolgreich!</h3>
+              <p className="relative text-white/70 mt-2">Vielen Dank für dein Interesse an MORE Applications</p>
             </div>
             <div className="p-6 space-y-6">
-              <div className="bg-sage-50 border border-sage-200 rounded-sm p-4">
-                <h4 className="font-semibold text-[#223322] mb-2 flex items-center gap-2">
-                  <CheckCircle className="text-sage-600" size={18} /> Nächster Schritt
+              <div className="bg-brand-50 border border-brand-200 rounded-xl p-4">
+                <h4 className="font-semibold text-ink mb-2 flex items-center gap-2">
+                  <CheckCircle className="text-brand-600" size={18} /> Nächster Schritt
                 </h4>
-                <p className="text-sm">Sie können sich ab sofort in Ihrem persönlichen Bewerberportal einloggen, um den Status Ihrer Bewerbung zu verfolgen.</p>
+                <p className="text-sm text-ink/60">Du kannst dich ab sofort in deinem persönlichen Bewerberportal einloggen, um den Status deiner Bewerbung zu verfolgen.</p>
               </div>
               <div className="space-y-3">
-                <h4 className="font-semibold text-[#223322]">Ihre Login-Daten:</h4>
-                <div className="bg-[#F4F8F4] border border-[#DDE8DD] rounded-sm p-4 space-y-3">
-                  <div><span className="text-sm text-[#8FA98F]">E-Mail:</span><p className="font-medium text-[#223322]">{submittedEmail}</p></div>
-                  <div><span className="text-sm text-[#8FA98F]">Passwort:</span><p className="font-medium text-[#223322]">Das von Ihnen gewählte Passwort</p></div>
+                <h4 className="font-semibold text-ink">Deine Login-Daten:</h4>
+                <div className="bg-brand-50/60 border border-brand-100 rounded-xl p-4 space-y-3">
+                  <div><span className="text-sm text-ink/45">E-Mail:</span><p className="font-medium text-ink">{submittedEmail}</p></div>
+                  <div><span className="text-sm text-ink/45">Passwort:</span><p className="font-medium text-ink">Das von dir gewählte Passwort</p></div>
                 </div>
               </div>
               <div className="space-y-3">
-                <h4 className="font-semibold text-[#223322]">Login-Adresse:</h4>
-                <div className="flex items-center gap-2 bg-[#F4F8F4] border border-[#DDE8DD] rounded-sm p-3">
-                  <code className="flex-1 text-sm text-sage-700 break-all">{getLoginUrl()}</code>
-                  <button onClick={() => copyToClipboard(getLoginUrl())} className="p-2 hover:bg-sage-100 rounded-sm transition-colors flex-shrink-0" title="Link kopieren">
-                    <Copy size={18} className="text-[#556655]" />
+                <h4 className="font-semibold text-ink">Login-Adresse:</h4>
+                <div className="flex items-center gap-2 bg-brand-50/60 border border-brand-100 rounded-xl p-3">
+                  <code className="flex-1 text-sm text-brand-700 break-all">{getLoginUrl()}</code>
+                  <button onClick={() => copyToClipboard(getLoginUrl())} className="p-2 hover:bg-brand-100 rounded-lg transition-colors flex-shrink-0" title="Link kopieren">
+                    <Copy size={18} className="text-ink/60" />
                   </button>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <a href={getLoginUrl()} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-sage-600 text-white rounded-sm font-semibold hover:bg-sage-700 transition-colors">
+                <a href={getLoginUrl()} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-ink text-white rounded-full font-semibold hover:bg-brand-600 transition-colors">
                   <ExternalLink size={18} /> Zum Login
                 </a>
-                <button onClick={() => setShowSuccessModal(false)} className="flex-1 px-6 py-3 border border-[#DDE8DD] text-[#223322] rounded-sm font-semibold hover:bg-[#F4F8F4] transition-colors">
+                <button onClick={() => setShowSuccessModal(false)} className="flex-1 px-6 py-3 border border-brand-100 text-ink rounded-full font-semibold hover:bg-brand-50 transition-colors">
                   Schließen
                 </button>
               </div>
-              <p className="text-xs text-[#8FA98F] text-center">Eine Bestätigungs-E-Mail mit allen Informationen wurde an {submittedEmail} gesendet.</p>
+              <p className="text-xs text-ink/45 text-center">Eine Bestätigungs-E-Mail mit allen Informationen wurde an {submittedEmail} gesendet.</p>
             </div>
           </div>
         </div>

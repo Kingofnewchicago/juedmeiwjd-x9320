@@ -1,106 +1,69 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Target, ShieldCheck, TrendingUp, Users, Award, ArrowRight } from 'lucide-react';
+import { Target, Heart, Lightbulb, Handshake, ArrowUpRight, MapPin } from 'lucide-react';
 
-const TEAM_IMG = 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzg3NDAwODQ4fDA&ixlib=rb-4.1.0&q=85';
+const values = [
+  { icon: Target, title: 'Ergebnisorientiert', desc: 'Wir messen Erfolg an Ihrem Erfolg – nicht an Story Points.' },
+  { icon: Lightbulb, title: 'Neugierig', desc: 'Wir bleiben am Puls der Technologie und lernen jeden Tag dazu.' },
+  { icon: Handshake, title: 'Partnerschaftlich', desc: 'Offen, ehrlich und auf Augenhöhe – langfristig gedacht.' },
+  { icon: Heart, title: 'Mit Sorgfalt', desc: 'Qualität und Detailliebe stecken in jedem Produkt, das wir bauen.' },
+];
 
 const Unternehmen = () => {
-  const values = [
-    { icon: Target, title: 'Präzision', desc: 'Höchste Genauigkeit in jedem Testschritt.' },
-    { icon: ShieldCheck, title: 'Zuverlässigkeit', desc: 'Konsistente, nachvollziehbare Ergebnisse.' },
-    { icon: TrendingUp, title: 'Sorgfalt', desc: 'Gründliche Arbeit statt schneller Kompromisse.' },
-    { icon: Users, title: 'Partnerschaft', desc: 'Langfristige, verlässliche Zusammenarbeit.' },
-  ];
-
-  const milestones = [
-    { year: '2024', event: 'Gründung von Tdata Testing' },
-    { year: '2025', event: 'Aufbau eines Teams von über 10 Testexperten' },
-    { year: '2026', event: 'Mehr als 25 Testexperten und 500+ geprüfte Anwendungen' },
-  ];
-
   return (
-    <div className="min-h-screen bg-white font-body text-[#556655]">
+    <div className="bg-white font-body text-ink/70">
       {/* Hero */}
-      <section className="bg-[#F4F8F4] border-b border-[#DDE8DD]">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="text-sage-700 font-semibold mb-3">Über uns</div>
-              <h1 className="font-heading text-4xl md:text-5xl font-bold text-[#223322] leading-tight mb-6">
-                Deutsche Gründlichkeit in der Qualitätssicherung
-              </h1>
-              <p className="text-lg leading-relaxed mb-8">
-                Seit 2024 steht Tdata Testing für sorgfältiges, strukturiertes
-                Application Testing. Unser Team aus zertifizierten Experten prüft
-                Software mit einem klaren Ziel: verlässliche Qualität.
-              </p>
-              <div className="flex flex-wrap gap-10">
-                {[
-                  { v: '2+', l: 'Jahre Erfahrung' },
-                  { v: '100+', l: 'Projekte' },
-                  { v: '25+', l: 'Experten' },
-                ].map((s, i) => (
-                  <div key={i}>
-                    <div className="font-heading text-3xl font-bold text-sage-600">{s.v}</div>
-                    <div className="text-sm">{s.l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="border border-[#DDE8DD] bg-white p-2 rounded-sm">
-              <img src={TEAM_IMG} alt="Team" className="w-full h-[400px] object-cover rounded-sm" />
-            </div>
+      <section className="relative bg-ink text-white overflow-hidden">
+        <div className="absolute inset-0 more-grid-bg opacity-40" />
+        <div className="pointer-events-none absolute -top-24 right-10 w-[460px] h-[460px] bg-brand-600/30 blur-[130px] rounded-full" />
+        <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-28">
+          <div className="max-w-3xl">
+            <p className="text-brand-200 font-semibold mb-4">Unternehmen</p>
+            <h1 className="font-heading text-5xl md:text-6xl font-bold leading-[1.05] mb-6">
+              Ein Studio für <span className="more-gradient-text">digitale Produkte.</span>
+            </h1>
+            <p className="text-lg text-white/60 leading-relaxed">
+              MORE Applications GmbH ist ein Software-Studio aus Hamburg. Wir
+              verbinden Strategie, Design und Engineering, um Applikationen zu
+              bauen, die Menschen gerne nutzen – und Unternehmen wirklich weiterbringen.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="border-l-4 border-sage-500 pl-8 py-2">
-              <div className="text-sage-700 font-semibold mb-3">Mission</div>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#223322] mb-4">
-                Qualität nachvollziehbar machen
-              </h2>
-              <p className="text-lg leading-relaxed">
-                Wir sind überzeugt, dass gute Software auf sorgfältiger Prüfung
-                beruht. Durch strukturierte Testing-Prozesse stellen wir sicher,
-                dass Anwendungen zuverlässig funktionieren und Vertrauen schaffen.
-              </p>
-            </div>
-            <div className="border-l-4 border-sage-300 pl-8 py-2">
-              <div className="text-sage-700 font-semibold mb-3">Vision</div>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#223322] mb-4">
-                Ein verlässlicher Standard für Softwarequalität
-              </h2>
-              <p className="text-lg leading-relaxed">
-                Mit Fachwissen, Sorgfalt und einem klaren Vorgehen möchten wir zu
-                einem festen Partner für Unternehmen werden, die auf geprüfte
-                Qualität setzen.
-              </p>
+      {/* Story + image */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="relative order-2 lg:order-1">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-brand-200/60 to-cyanx/30 blur-2xl rounded-3xl" />
+            <img src="https://images.pexels.com/photos/7988742/pexels-photo-7988742.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Team von MORE Applications" className="relative rounded-2xl border border-brand-100 shadow-xl w-full h-[440px] object-cover" />
+          </div>
+          <div className="order-1 lg:order-2">
+            <p className="text-brand-600 font-semibold mb-3">Unsere Geschichte</p>
+            <h2 className="font-heading text-4xl font-bold text-ink mb-6">Aus Ideen werden Anwendungen.</h2>
+            <div className="space-y-4 text-ink/60 text-lg leading-relaxed">
+              <p>Wir sind ein eingespieltes Team aus Entwicklern, Designern und Produktdenkern. Was uns antreibt, ist die Freude daran, komplexe Anforderungen in klare, elegante Software zu übersetzen.</p>
+              <p>Vom Start-up-MVP bis zur unternehmenskritischen Plattform: Wir begleiten unsere Kunden über den gesamten Lebenszyklus ihres Produkts – und bleiben auch nach dem Launch an Bord.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-16 md:py-24 bg-[#F4F8F4] border-y border-[#DDE8DD]">
+      <section className="py-20 md:py-28 bg-brand-50/50 border-y border-brand-100">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="max-w-2xl mb-12">
-            <div className="text-sage-700 font-semibold mb-3">Werte</div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#223322]">Was uns leitet</h2>
+          <div className="max-w-2xl mb-14">
+            <p className="text-brand-600 font-semibold mb-3">Was uns ausmacht</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-ink">Werte, die wir wirklich leben.</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, i) => {
-              const Icon = value.icon;
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((v) => {
+              const Icon = v.icon;
               return (
-                <div key={i} className="bg-white border border-[#DDE8DD] p-8 rounded-sm hover:border-sage-400 transition-colors duration-150">
-                  <div className="w-12 h-12 bg-sage-50 border border-sage-200 rounded-sm flex items-center justify-center mb-5">
-                    <Icon className="text-sage-600" size={24} strokeWidth={1.75} />
-                  </div>
-                  <h3 className="font-heading text-lg font-bold text-[#223322] mb-2">{value.title}</h3>
-                  <p>{value.desc}</p>
+                <div key={v.title} className="rounded-2xl bg-white border border-brand-100 p-7">
+                  <div className="w-12 h-12 rounded-xl bg-brand-600 flex items-center justify-center mb-5"><Icon className="text-white" size={22} /></div>
+                  <h3 className="font-heading text-lg font-bold text-ink mb-2">{v.title}</h3>
+                  <p className="text-sm text-ink/60 leading-relaxed">{v.desc}</p>
                 </div>
               );
             })}
@@ -108,56 +71,26 @@ const Unternehmen = () => {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="max-w-2xl mb-12">
-            <div className="text-sage-700 font-semibold mb-3">Geschichte</div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#223322]">Unsere Meilensteine</h2>
+      {/* Location */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-brand-600 font-semibold mb-3 inline-flex items-center gap-2"><MapPin size={16} /> Standort</p>
+            <h2 className="font-heading text-4xl font-bold text-ink mb-5">Zuhause in Hamburg.</h2>
+            <p className="text-lg text-ink/60 mb-4">Unser Team arbeitet aus dem Herzen Hamburgs – und remote für Kunden in ganz Deutschland und Europa.</p>
+            <p className="text-ink/70 font-medium">Heinrich-Hertz-Str. 133<br />22083 Hamburg, Deutschland</p>
           </div>
-          <div className="space-y-6">
-            {milestones.map((item, i) => (
-              <div key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 border-b border-[#DDE8DD] pb-6">
-                <div className="font-heading text-2xl font-bold text-sage-600 w-24 flex-shrink-0">{item.year}</div>
-                <p className="text-lg">{item.event}</p>
+          <div className="rounded-3xl bg-ink text-white p-10 relative overflow-hidden">
+            <div className="absolute inset-0 more-grid-bg opacity-30" />
+            <div className="relative">
+              <h3 className="font-heading text-2xl font-bold mb-3">Lust auf Zusammenarbeit?</h3>
+              <p className="text-white/60 mb-7">Ob Projekt oder Bewerbung – wir freuen uns, von Ihnen zu hören.</p>
+              <div className="flex flex-wrap gap-3">
+                <Link to="/kontakt" className="inline-flex items-center gap-2 h-12 px-6 bg-brand-500 hover:bg-brand-400 rounded-full font-semibold transition-colors">Kontakt <ArrowUpRight size={16} /></Link>
+                <Link to="/karriere" className="inline-flex items-center gap-2 h-12 px-6 border border-white/20 hover:bg-white/10 rounded-full font-semibold transition-colors">Karriere</Link>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Certifications band */}
-      <section className="py-16 bg-[#F4F8F4] border-y border-[#DDE8DD]">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { icon: Award, t: 'Zertifizierte Tester', d: 'Anerkannte Qualifikationen im gesamten Team.' },
-            { icon: Users, t: 'Erfahrenes Team', d: 'Langjährige Praxis in der Qualitätssicherung.' },
-            { icon: TrendingUp, t: 'Laufende Weiterbildung', d: 'Aktuelles Wissen zu Testing-Methoden.' },
-          ].map((c, i) => {
-            const Icon = c.icon;
-            return (
-              <div key={i} className="flex items-start gap-4">
-                <Icon className="text-sage-600 flex-shrink-0" size={32} strokeWidth={1.5} />
-                <div>
-                  <h3 className="font-heading text-lg font-bold text-[#223322] mb-1">{c.t}</h3>
-                  <p className="text-sm">{c.d}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 md:py-20 bg-sage-800">
-        <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Teil unseres Teams werden?</h2>
-          <p className="text-lg text-[#C7DBC7] mb-8">
-            Wir suchen zuverlässige Testerinnen und Tester, die Sorgfalt schätzen.
-          </p>
-          <Link to="/karriere" data-testid="about-careers-cta" className="inline-flex items-center gap-2 h-12 px-8 bg-white text-sage-800 font-semibold rounded-sm hover:bg-sage-50 transition-colors">
-            Offene Stellen <ArrowRight size={18} />
-          </Link>
         </div>
       </section>
     </div>
