@@ -1,5 +1,12 @@
 # Prysm Technologies (ehemals Keyperion / Precision Labs) – PRD
 
+## 🟠 Restyle Indigo → Hell Orange/Weiß (2026-07)
+- Nutzer fand den dunklen Indigo-Look schlecht → kompletter Umstieg auf **hellen Weiß/Orange-Stil**. Palette (brand/sage) → Orange (#F97316 etc.), `ink` = warmes Near-Black nur noch für TEXT. `more-gradient-text` + grid + selection + Logo-Gradient + theme-color auf Orange.
+- Öffentliche Website: alle dunklen `bg-ink`-Hero-/Sektionen → helle Verläufe (from-orange-50 via-white), CTA-/Info-Karten → Orange-Gradient mit weißer Schrift, Buttons → Orange. Home/Unternehmen/Kontakt/Footer neu geschrieben; Dienstleistungen/Karriere/Impressum/Datenschutz + Navbar per gezielten Replace umgestellt.
+- Mitarbeiter-Panel: zuvor eingefärbte Indigo-Hex → Orange rekoloriert (Login/Signup/Verification/Pending/AwaitingApproval/ContractSign/EmailPanel). Admin-Panel bleibt vorerst dunkel (Tokyo Night) – separates internes Tool.
+- Verifiziert per Screenshots: Home/Kontakt/Mitarbeiter-Login alle hell/orange, Formularlogik unverändert. Lint sauber (nur bestehende Alt-Warnungen).
+
+
 ## 🟢 Rebrand → MORE Applications GmbH + grundlegendes Redesign (2026-07)
 - **Kompletter Rebrand (überall):** Tdata/Webora → **MORE Applications GmbH**. Neues Logo (`MoreLogo`, Indigo→Cyan-Gradient „M", `Logo.jsx` mit `TdataLogo`-Alias für Abwärtskompatibilität aller Imports). Öffentliche Website, Mitarbeiter- UND Admin-Panel umbenannt/umgefärbt.
 - **Grundlegend neues Design:** Salbeigrün → modernes **Indigo/Violett + Cyan**, dunkle Hero-Sektionen (`bg-ink`), Fonts Merriweather/Source Sans → **Space Grotesk + Inter**. Umgesetzt via `tailwind.config.js` (sage-Palette auf Indigo remappt + neues `brand`/`ink`/`cyanx`), `index.css`, `index.html`. Panels färben sich über die sage→indigo-Neudefinition automatisch um; hartkodierte Grün-Hex per sed → Indigo ersetzt.

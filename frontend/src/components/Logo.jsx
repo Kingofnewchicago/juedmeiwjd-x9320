@@ -16,9 +16,9 @@ export const MoreLogo = ({ className = "" }) => {
     >
       <defs>
         <linearGradient id={`g-${gid}`} x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#6366F1" />
-          <stop offset="0.55" stopColor="#4F46E5" />
-          <stop offset="1" stopColor="#22D3EE" />
+          <stop offset="0" stopColor="#FDBA74" />
+          <stop offset="0.55" stopColor="#F97316" />
+          <stop offset="1" stopColor="#EA580C" />
         </linearGradient>
       </defs>
       <rect x="8" y="8" width="184" height="184" rx="42" fill={`url(#g-${gid})`} />
@@ -32,7 +32,7 @@ export const MoreLogo = ({ className = "" }) => {
         strokeLinecap="round"
       />
       {/* app dot */}
-      <circle cx="100" cy="150" r="9" fill="#A5F3FC" />
+      <circle cx="100" cy="150" r="9" fill="#FFE8D1" />
     </svg>
   );
 };

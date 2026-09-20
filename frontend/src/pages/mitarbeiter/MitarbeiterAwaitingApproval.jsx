@@ -4,12 +4,12 @@ import { TdataLogo } from '../../components/Logo';
 
 const MitarbeiterAwaitingApproval = ({ applicant }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#EEF1FF] via-white to-[#E0E4FF] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#FFF7ED] via-white to-[#FFEDD5] flex items-center justify-center p-4">
       <div className="max-w-lg w-full bg-white rounded-2xl shadow-xl border border-slate-100 p-8 text-center">
         <TdataLogo className="h-12 w-12 mx-auto mb-6" />
         
-        <div className="w-20 h-20 bg-[#EEF1FF] rounded-full flex items-center justify-center mx-auto mb-6">
-          <Shield className="text-[#6366F1]" size={40} />
+        <div className="w-20 h-20 bg-[#FFF7ED] rounded-full flex items-center justify-center mx-auto mb-6">
+          <Shield className="text-[#F97316]" size={40} />
         </div>
         
         <h1 className="text-2xl font-bold text-[#0A0A0A] mb-4">
@@ -23,16 +23,16 @@ const MitarbeiterAwaitingApproval = ({ applicant }) => {
 
         <div className="bg-slate-50 rounded-xl p-6 text-left space-y-4">
           <h3 className="font-semibold text-[#0A0A0A] flex items-center gap-2">
-            <Clock size={18} className="text-[#6366F1]" />
+            <Clock size={18} className="text-[#F97316]" />
             Nächste Schritte
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-3">
-              <CheckCircle size={18} className="text-[#6366F1] flex-shrink-0 mt-0.5" />
+              <CheckCircle size={18} className="text-[#F97316] flex-shrink-0 mt-0.5" />
               <span className="text-slate-700">Vertrag unterschrieben</span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle size={18} className="text-[#6366F1] flex-shrink-0 mt-0.5" />
+              <CheckCircle size={18} className="text-[#F97316] flex-shrink-0 mt-0.5" />
               <span className="text-slate-700">Dokumente hochgeladen</span>
             </li>
             <li className="flex items-start gap-3">
@@ -56,7 +56,7 @@ const MitarbeiterAwaitingApproval = ({ applicant }) => {
         <div className="mt-8 pt-6 border-t border-slate-100">
           <p className="text-sm text-slate-500">
             <Mail className="inline mr-1" size={14} />
-            Bei Fragen wenden Sie sich an <a href="mailto:hr@more-applications.de" className="text-[#6366F1] hover:underline">hr@more-applications.de</a>
+            Bei Fragen wenden Sie sich an <a href="mailto:hr@more-applications.de" className="text-[#F97316] hover:underline">hr@more-applications.de</a>
           </p>
         </div>
       </div>

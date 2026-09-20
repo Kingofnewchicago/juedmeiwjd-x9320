@@ -18,40 +18,41 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)'
       },
       colors: {
-        // Legacy "sage" name kept but remapped to the new MORE indigo brand,
+        // Legacy "sage" name kept but remapped to the MORE warm-orange brand,
         // so existing panel classes recolor automatically.
         sage: {
-          '50': '#EEF1FF',
-          '100': '#E0E4FF',
-          '200': '#C6CCFF',
-          '300': '#A3ABFF',
-          '400': '#7F86FB',
-          '500': '#6366F1',
-          '600': '#4F46E5',
-          '700': '#4338CA',
-          '800': '#372FA0',
-          '900': '#1E1B4B'
+          '50': '#FFF7ED',
+          '100': '#FFEDD5',
+          '200': '#FED7AA',
+          '300': '#FDBA74',
+          '400': '#FB923C',
+          '500': '#F97316',
+          '600': '#EA580C',
+          '700': '#C2410C',
+          '800': '#9A3412',
+          '900': '#7C2D12'
         },
         brand: {
-          '50': '#EEF1FF',
-          '100': '#E0E4FF',
-          '200': '#C6CCFF',
-          '300': '#A3ABFF',
-          '400': '#7F86FB',
-          '500': '#6366F1',
-          '600': '#4F46E5',
-          '700': '#4338CA',
-          '800': '#372FA0',
-          '900': '#1E1B4B'
+          '50': '#FFF7ED',
+          '100': '#FFEDD5',
+          '200': '#FED7AA',
+          '300': '#FDBA74',
+          '400': '#FB923C',
+          '500': '#F97316',
+          '600': '#EA580C',
+          '700': '#C2410C',
+          '800': '#9A3412',
+          '900': '#7C2D12'
         },
+        // warm near-black used for TEXT (text-ink) on light backgrounds
         ink: {
-          DEFAULT: '#0B0B18',
-          soft: '#12122A',
-          mute: '#1C1C3A'
+          DEFAULT: '#1C1917',
+          soft: '#292524',
+          mute: '#44403C'
         },
         cyanx: {
-          DEFAULT: '#22D3EE',
-          soft: '#A5F3FC'
+          DEFAULT: '#FB923C',
+          soft: '#FFEDD5'
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

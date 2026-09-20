@@ -10,10 +10,10 @@ const Section = ({ title, children }) => (
 const Datenschutz = () => {
   return (
     <div className="bg-white font-body text-ink/70">
-      <section className="relative bg-ink text-white overflow-hidden">
+      <section className="relative bg-gradient-to-b from-orange-50 via-white to-white text-ink overflow-hidden border-b border-orange-100">
         <div className="absolute inset-0 more-grid-bg opacity-40" />
         <div className="relative max-w-4xl mx-auto px-6 md:px-8 py-20 md:py-24">
-          <p className="text-brand-200 font-semibold mb-4">Rechtliches</p>
+          <p className="text-orange-600 font-semibold mb-4">Rechtliches</p>
           <h1 className="font-heading text-5xl md:text-6xl font-bold">Datenschutz</h1>
         </div>
       </section>

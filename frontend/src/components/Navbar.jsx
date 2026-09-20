@@ -75,7 +75,7 @@ export const Navbar = () => {
           <Link
             to="/kontakt"
             data-testid="nav-cta"
-            className="hidden lg:inline-flex items-center gap-1.5 h-11 pl-5 pr-4 bg-ink text-white font-body text-sm font-semibold rounded-full hover:bg-brand-600 transition-colors duration-200 group"
+            className="hidden lg:inline-flex items-center gap-1.5 h-11 pl-5 pr-4 bg-orange-500 text-white font-body text-sm font-semibold rounded-full hover:bg-orange-600 transition-colors duration-200 group"
           >
             Projekt anfragen
             <ArrowUpRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -110,7 +110,7 @@ export const Navbar = () => {
             ))}
             <Link
               to="/kontakt"
-              className="mt-4 inline-flex items-center justify-center h-12 bg-ink text-white font-body font-semibold rounded-full"
+              className="mt-4 inline-flex items-center justify-center h-12 bg-orange-500 text-white font-body font-semibold rounded-full"
             >
               Projekt anfragen
             </Link>

@@ -14,10 +14,10 @@
 @tailwind utilities;
 
 :root {
-    --mint: #6366F1;
-    --mint-light: #E0E4FF;
-    --deep-black: #0B0B18;
-    --surface: #F7F7FB;
+    --mint: #F97316;
+    --mint-light: #FFEDD5;
+    --deep-black: #1C1917;
+    --surface: #FFFBF7;
 }
 
 * {
@@ -39,9 +39,9 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.02;
 }
 
-/* Indigo gradient text helper */
+/* Orange gradient text helper */
 .more-gradient-text {
-    background: linear-gradient(100deg, #818CF8 0%, #6366F1 45%, #22D3EE 100%);
+    background: linear-gradient(100deg, #FB923C 0%, #F97316 50%, #EA580C 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -49,8 +49,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .more-grid-bg {
     background-image:
-        linear-gradient(to right, rgba(99,102,241,0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(99,102,241,0.08) 1px, transparent 1px);
+        linear-gradient(to right, rgba(249,115,22,0.10) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(249,115,22,0.10) 1px, transparent 1px);
     background-size: 44px 44px;
 }
 
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Selection styling */
 ::selection {
-    background: #6366F1;
+    background: #F97316;
     color: white;
 }
 

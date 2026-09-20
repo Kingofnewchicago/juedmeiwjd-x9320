@@ -128,16 +128,16 @@ const Karriere = () => {
   return (
     <div className="bg-white font-body text-ink/70">
       {/* Hero */}
-      <section className="relative bg-ink text-white overflow-hidden">
+      <section className="relative bg-gradient-to-b from-orange-50 via-white to-white text-ink overflow-hidden border-b border-orange-100">
         <div className="absolute inset-0 more-grid-bg opacity-40" />
         <div className="pointer-events-none absolute -top-24 right-1/4 w-[440px] h-[440px] bg-brand-600/30 blur-[130px] rounded-full" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-28">
           <div className="max-w-3xl">
-            <p className="text-brand-200 font-semibold mb-4">Karriere bei MORE Applications</p>
+            <p className="text-orange-600 font-semibold mb-4">Karriere bei MORE Applications</p>
             <h1 className="font-heading text-5xl md:text-6xl font-bold leading-[1.05] mb-6">
               Baue mit uns die <span className="more-gradient-text">Zukunft.</span>
             </h1>
-            <p className="text-lg text-white/60 leading-relaxed">
+            <p className="text-lg text-ink/60 leading-relaxed">
               Werde Teil eines Teams, das moderne Software mit Sorgfalt und
               Leidenschaft entwickelt. Bei MORE Applications erwarten dich echte
               Projekte, flache Hierarchien und viel Raum für deine Ideen.
@@ -199,7 +199,7 @@ const Karriere = () => {
                     </ul>
                   </div>
                   <div>
-                    <a href="#bewerbung" className="inline-flex items-center justify-center px-6 py-3 bg-ink text-white rounded-full font-semibold hover:bg-brand-600 transition-colors whitespace-nowrap">
+                    <a href="#bewerbung" className="inline-flex items-center justify-center px-6 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition-colors whitespace-nowrap">
                       Jetzt bewerben
                     </a>
                   </div>
@@ -319,7 +319,7 @@ const Karriere = () => {
                 </div>
               </div>
 
-              <Button type="submit" disabled={isSubmitting} data-testid="karriere-submit" className="w-full h-14 bg-ink hover:bg-brand-600 text-white text-base font-semibold rounded-full transition-colors">
+              <Button type="submit" disabled={isSubmitting} data-testid="karriere-submit" className="w-full h-14 bg-orange-500 hover:bg-orange-600 text-white text-base font-semibold rounded-full transition-colors">
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div> Wird gesendet...
@@ -342,7 +342,7 @@ const Karriere = () => {
       {showSuccessModal && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl overflow-hidden border border-brand-100">
-            <div className="bg-ink p-6 text-white text-center relative overflow-hidden">
+            <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-6 text-white text-center relative overflow-hidden">
               <div className="absolute inset-0 more-grid-bg opacity-30" />
               <button onClick={() => setShowSuccessModal(false)} className="absolute top-4 right-4 p-1 hover:bg-white/20 rounded-lg transition-colors z-10">
                 <X size={20} />
@@ -377,7 +377,7 @@ const Karriere = () => {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <a href={getLoginUrl()} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-ink text-white rounded-full font-semibold hover:bg-brand-600 transition-colors">
+                <a href={getLoginUrl()} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition-colors">
                   <ExternalLink size={18} /> Zum Login
                 </a>
                 <button onClick={() => setShowSuccessModal(false)} className="flex-1 px-6 py-3 border border-brand-100 text-ink rounded-full font-semibold hover:bg-brand-50 transition-colors">

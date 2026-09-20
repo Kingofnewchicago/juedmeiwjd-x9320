@@ -23,19 +23,19 @@ const Kontakt = () => {
     }, 1200);
   };
 
-  const inputClass = 'w-full px-4 py-3 border border-brand-100 rounded-xl bg-white text-ink focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition-colors';
+  const inputClass = 'w-full px-4 py-3 border border-orange-100 rounded-xl bg-white text-ink focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-colors';
 
   return (
     <div className="bg-white font-body text-ink/70">
       {/* Hero */}
-      <section className="relative bg-ink text-white overflow-hidden">
-        <div className="absolute inset-0 more-grid-bg opacity-40" />
-        <div className="pointer-events-none absolute -top-24 right-1/4 w-[440px] h-[440px] bg-brand-600/30 blur-[130px] rounded-full" />
+      <section className="relative bg-gradient-to-b from-orange-50 via-white to-white overflow-hidden border-b border-orange-100">
+        <div className="absolute inset-0 more-grid-bg opacity-60" />
+        <div className="pointer-events-none absolute -top-24 right-1/4 w-[440px] h-[440px] bg-orange-200/40 blur-[130px] rounded-full" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-28">
           <div className="max-w-3xl">
-            <p className="text-brand-200 font-semibold mb-4">Kontakt</p>
-            <h1 className="font-heading text-5xl md:text-6xl font-bold leading-[1.05] mb-6">Lassen Sie uns <span className="more-gradient-text">sprechen.</span></h1>
-            <p className="text-lg text-white/60">Haben Sie ein Projekt oder eine Frage? Wir freuen uns auf Ihre Nachricht.</p>
+            <p className="text-orange-600 font-semibold mb-4">Kontakt</p>
+            <h1 className="font-heading text-5xl md:text-6xl font-bold leading-[1.05] mb-6 text-ink">Lassen Sie uns <span className="more-gradient-text">sprechen.</span></h1>
+            <p className="text-lg text-ink/60">Haben Sie ein Projekt oder eine Frage? Wir freuen uns auf Ihre Nachricht.</p>
           </div>
         </div>
       </section>
@@ -74,7 +74,7 @@ const Kontakt = () => {
                 <label className="block text-sm font-semibold text-ink mb-2">Nachricht *</label>
                 <textarea name="message" value={formData.message} onChange={handleChange} required rows={5} placeholder="Erzählen Sie uns von Ihrem Vorhaben ..." className={inputClass} />
               </div>
-              <button type="submit" disabled={isSubmitting} data-testid="contact-submit" className="inline-flex items-center justify-center gap-2 h-13 px-8 py-3.5 bg-ink hover:bg-brand-600 text-white font-semibold rounded-full transition-colors disabled:opacity-60">
+              <button type="submit" disabled={isSubmitting} data-testid="contact-submit" className="inline-flex items-center justify-center gap-2 h-13 px-8 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-colors disabled:opacity-60 shadow-lg shadow-orange-500/25">
                 {isSubmitting ? 'Wird gesendet...' : (<>Nachricht senden <Send size={17} /></>)}
               </button>
             </form>
@@ -82,33 +82,33 @@ const Kontakt = () => {
 
           {/* Info */}
           <div className="lg:col-span-2 space-y-5">
-            <a href="mailto:info@more-applications.de" className="flex items-start gap-4 rounded-2xl border border-brand-100 p-6 hover:border-brand-300 transition-colors group" data-testid="contact-email-link">
-              <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center group-hover:bg-brand-600 transition-colors"><Mail className="text-brand-600 group-hover:text-white transition-colors" size={22} /></div>
+            <a href="mailto:info@more-applications.de" className="flex items-start gap-4 rounded-2xl border border-orange-100 p-6 hover:border-orange-300 transition-colors group" data-testid="contact-email-link">
+              <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition-colors"><Mail className="text-orange-600 group-hover:text-white transition-colors" size={22} /></div>
               <div>
                 <p className="font-heading font-bold text-ink">E-Mail</p>
                 <p className="text-sm text-ink/60 mt-1">info@more-applications.de</p>
               </div>
             </a>
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-100 p-6">
-              <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center"><MapPin className="text-brand-600" size={22} /></div>
+            <div className="flex items-start gap-4 rounded-2xl border border-orange-100 p-6">
+              <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center"><MapPin className="text-orange-600" size={22} /></div>
               <div>
                 <p className="font-heading font-bold text-ink">Adresse</p>
                 <p className="text-sm text-ink/60 mt-1">Heinrich-Hertz-Str. 133<br />22083 Hamburg, Deutschland</p>
               </div>
             </div>
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-100 p-6">
-              <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center"><Clock className="text-brand-600" size={22} /></div>
+            <div className="flex items-start gap-4 rounded-2xl border border-orange-100 p-6">
+              <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center"><Clock className="text-orange-600" size={22} /></div>
               <div>
                 <p className="font-heading font-bold text-ink">Reaktionszeit</p>
                 <p className="text-sm text-ink/60 mt-1">Wir antworten in der Regel innerhalb von 24 Stunden.</p>
               </div>
             </div>
-            <div className="rounded-2xl bg-ink text-white p-6 relative overflow-hidden">
-              <div className="absolute inset-0 more-grid-bg opacity-30" />
+            <div className="rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 relative overflow-hidden">
+              <div className="pointer-events-none absolute -top-12 -right-8 w-[200px] h-[200px] bg-white/15 blur-[70px] rounded-full" />
               <div className="relative">
                 <p className="font-heading font-bold text-lg mb-2">Sie möchten bei uns arbeiten?</p>
-                <p className="text-white/60 text-sm mb-4">Schauen Sie sich unsere offenen Stellen an.</p>
-                <a href="/karriere" className="inline-flex items-center gap-1.5 text-brand-300 font-semibold hover:text-white transition-colors">Zur Karriereseite <ArrowUpRight size={15} /></a>
+                <p className="text-white/80 text-sm mb-4">Schauen Sie sich unsere offenen Stellen an.</p>
+                <a href="/karriere" className="inline-flex items-center gap-1.5 text-white font-semibold underline underline-offset-4 hover:text-orange-50 transition-colors">Zur Karriereseite <ArrowUpRight size={15} /></a>
               </div>
             </div>
           </div>
