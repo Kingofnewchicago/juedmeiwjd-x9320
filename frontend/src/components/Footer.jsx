@@ -15,10 +15,10 @@ export const Footer = () => {
       { name: 'Kontakt', path: '/kontakt' },
     ],
     services: [
-      'Web-Applikationen',
-      'Mobile Apps',
-      'Cloud & APIs',
-      'UI/UX Design',
+      'Funktionales Testing',
+      'Performance-Testing',
+      'Mobile App Testing',
+      'Testautomatisierung',
     ],
     legal: [
       { name: 'Impressum', path: '/impressum' },
@@ -34,7 +34,7 @@ export const Footer = () => {
         <div className="mb-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 relative overflow-hidden">
           <div className="pointer-events-none absolute -top-16 right-10 w-[240px] h-[240px] bg-white/15 blur-[80px] rounded-full" />
           <div className="relative">
-            <p className="font-heading text-xl font-bold">Ein Projekt im Kopf?</p>
+            <p className="font-heading text-xl font-bold">Software zu testen?</p>
             <p className="text-white/80 text-sm mt-1">Erzählen Sie uns davon – wir melden uns innerhalb von 24 Stunden.</p>
           </div>
           <Link to="/kontakt" className="relative inline-flex items-center gap-1.5 h-12 px-6 bg-white text-orange-600 hover:bg-orange-50 font-semibold rounded-full transition-colors">
@@ -53,9 +53,9 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-ink/60 leading-relaxed max-w-sm mb-8">
-              Wir entwickeln moderne Software und Applikationen – von der ersten
-              Idee bis zum skalierbaren Produkt. Durchdacht, zuverlässig und
-              termintreu aus Hamburg.
+              Wir prüfen Web- und Mobile-Anwendungen auf Funktion, Performance
+              und Benutzerfreundlichkeit – gründlich, sorgfältig und transparent
+              dokumentiert aus Hamburg.
             </p>
 
             <div className="space-y-3">

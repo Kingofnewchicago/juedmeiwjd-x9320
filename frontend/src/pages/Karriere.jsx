@@ -107,20 +107,20 @@ const Karriere = () => {
   };
 
   const openPositions = [
-    { title: 'Frontend Developer (React)', location: 'Hamburg / Remote', type: 'Vollzeit', description: 'Du baust moderne, performante Interfaces mit React & TypeScript.', requirements: ['Sehr gute React- und JavaScript-Kenntnisse', 'Erfahrung mit TypeScript & modernen Build-Tools', 'Gespür für UI/UX und sauberen Code', 'Teamfähigkeit und selbstständige Arbeitsweise'] },
-    { title: 'Backend Developer (Node/Python)', location: 'Hamburg / Remote', type: 'Vollzeit', description: 'Du entwickelst skalierbare APIs und robuste Backend-Services.', requirements: ['Erfahrung mit Node.js oder Python', 'Kenntnisse in REST/GraphQL & Datenbanken', 'Verständnis von Cloud & Deployment', 'Gute Deutsch- oder Englischkenntnisse'] },
-    { title: 'Mobile App Developer (iOS/Android)', location: 'Hamburg / Remote', type: 'Vollzeit / Teilzeit', description: 'Du entwickelst native oder plattformübergreifende Apps.', requirements: ['Erfahrung mit Flutter, React Native oder nativer Entwicklung', 'Verständnis von App-Store-Prozessen', 'Blick für Performance und Details', 'Eigenverantwortliche Arbeitsweise'] },
-    { title: 'UI/UX Designer', location: 'Hamburg / Remote', type: 'Vollzeit', description: 'Du gestaltest durchdachte, nutzerzentrierte Produkte.', requirements: ['Sicherer Umgang mit Figma', 'Erfahrung mit Design-Systemen & Prototyping', 'Portfolio mit digitalen Produkten', 'Verständnis für Frontend-Umsetzung'] },
-    { title: 'Werkstudent Softwareentwicklung', location: 'Hamburg / Remote', type: 'Teilzeit', description: 'Idealer Einstieg für Studierende in echte Projekte.', requirements: ['Eingeschriebener Student (m/w/d)', 'Erste Programmiererfahrung', 'Lernbereitschaft und Neugier', 'Flexible Zeiteinteilung'] },
+    { title: 'Web Application Tester', location: 'Remote / Homeoffice', type: 'Minijob', description: 'Assistent für Evaluierungen im Homeoffice – Überprüfung von Apps und Software.', requirements: ['Interesse an App- und Software-Testing', 'Zuverlässige und selbstständige Arbeitsweise', 'Gute Deutschkenntnisse', 'PC/Laptop und stabile Internetverbindung'] },
+    { title: 'QA Engineer', location: 'Remote / Deutschland', type: 'Vollzeit', description: 'QA Engineer für spannende Testing-Projekte gesucht.', requirements: ['Grundkenntnisse im Software Testing', 'Interesse an Testautomatisierung', 'Teamfähigkeit und Kommunikationsstärke', 'Gute Deutschkenntnisse'] },
+    { title: 'Mobile App Tester', location: 'Remote / Deutschland', type: 'Vollzeit / Teilzeit', description: 'Tester für iOS und Android Apps.', requirements: ['Eigenes Smartphone (iOS oder Android)', 'Interesse an mobilen Apps', 'Genaue und strukturierte Arbeitsweise', 'Keine Vorkenntnisse erforderlich'] },
+    { title: 'Junior Test Analyst', location: 'Remote / Deutschland', type: 'Vollzeit', description: 'Einstiegsposition für motivierte Testing-Einsteiger.', requirements: ['Keine Berufserfahrung notwendig', 'Lernbereitschaft und Neugier', 'Analytisches Denken', 'Gute Deutschkenntnisse'] },
+    { title: 'Werkstudent Testing', location: 'Remote / Deutschland', type: 'Teilzeit', description: 'Idealer Nebenjob für Studierende.', requirements: ['Eingeschriebener Student (m/w/d)', 'Flexible Zeiteinteilung möglich', 'Interesse an Softwarequalität', 'Grundlegende PC-Kenntnisse'] },
   ];
 
   const benefits = [
     { icon: TrendingUp, title: 'Entwicklung', description: 'Individuelle Weiterbildung und Zertifizierungen' },
-    { icon: Users, title: 'Starkes Team', description: 'Zusammenarbeit mit erfahrenen Entwicklern & Designern' },
+    { icon: Users, title: 'Gutes Team', description: 'Zusammenarbeit mit erfahrenen Testexperten' },
     { icon: Coffee, title: 'Work-Life-Balance', description: 'Flexible Arbeitszeiten und Homeoffice' },
     { icon: Heart, title: 'Gesundheit', description: 'Betriebliche Zusatzleistungen' },
-    { icon: GraduationCap, title: 'Modernes Setup', description: 'Aktuelle Hardware und Tools deiner Wahl' },
-    { icon: Briefcase, title: 'Echte Projekte', description: 'Spannende Produkte für echte Kunden' },
+    { icon: GraduationCap, title: 'Weiterbildung', description: 'Schulungen zu Testing-Methoden' },
+    { icon: Briefcase, title: 'Moderne Tools', description: 'Aktuelle Testing-Technologien' },
   ];
 
   const inputBase = 'h-12 border-brand-100 focus-visible:ring-brand-500';
@@ -135,12 +135,12 @@ const Karriere = () => {
           <div className="max-w-3xl">
             <p className="text-orange-600 font-semibold mb-4">Karriere bei MORE Applications</p>
             <h1 className="font-heading text-5xl md:text-6xl font-bold leading-[1.05] mb-6">
-              Baue mit uns die <span className="more-gradient-text">Zukunft.</span>
+              Werde Teil unseres <span className="more-gradient-text">Teams.</span>
             </h1>
             <p className="text-lg text-ink/60 leading-relaxed">
-              Werde Teil eines Teams, das moderne Software mit Sorgfalt und
-              Leidenschaft entwickelt. Bei MORE Applications erwarten dich echte
-              Projekte, flache Hierarchien und viel Raum für deine Ideen.
+              Arbeite mit erfahrenen Testexperten und gestalte Softwarequalität
+              mit. Bei MORE Applications erwarten dich strukturierte Testprojekte,
+              flache Hierarchien und gute Entwicklungsmöglichkeiten.
             </p>
           </div>
         </div>
@@ -306,7 +306,7 @@ const Karriere = () => {
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="position">Gewünschte Position *</Label>
-                    <Input id="position" name="position" value={formData.position} onChange={handleChange} placeholder="z. B. Frontend Developer" required className={inputBase} />
+                    <Input id="position" name="position" value={formData.position} onChange={handleChange} placeholder="z. B. QA Engineer" required className={inputBase} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="cv">Lebenslauf / CV *</Label>

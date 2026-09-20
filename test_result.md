@@ -156,16 +156,31 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ VERIFIED: Tested Dashboard, Bewerbungen, and Chat menu items - all navigate correctly without errors. Minor: AdminApplications has HTML hydration warnings (span in tbody/tr) but functionality works."
+  
+  - task: "Content pivot: Update public website from development to testing/QA agency"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Home.jsx, /app/frontend/src/pages/Dienstleistungen.jsx, /app/frontend/src/pages/Karriere.jsx, /app/frontend/src/pages/Kontakt.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Business repositioned from software DEVELOPMENT to software/application TESTING (QA agency). Updated all public pages: Home page hero 'Wir finden Fehler, bevor Ihre Nutzer es tun', testing services (Funktionales Testing, Performance-Testing, Mobile App Testing, Usability-Testing, Testautomatisierung, Security- & API-Testing), testing job roles (Web Application Tester, QA Engineer, Mobile App Tester, Junior Test Analyst, Werkstudent Testing), Test-Tools band (Selenium, Cypress, Playwright, Appium, JMeter, Postman, TestRail, Jira, BrowserStack, Charles, Git, Figma). Removed all development-related content. Needs verification of content accuracy and functionality."
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED: Comprehensive content + functionality testing completed with 100% success rate. CONTENT: (1) Home page - Hero 'Wir finden Fehler, bevor Ihre Nutzer es tun', eyebrow 'Application Testing aus Hamburg', all 4 testing service cards present, NO development terms, brand 'MORE Applications' (3x), Hamburg (5x); (2) Dienstleistungen - All 6 testing services present, Test-Tools band complete (6/6 tools); (3) Karriere - All 5 testing job roles present, NO developer roles. FUNCTIONALITY: (4) CRITICAL - Karriere application form submitted successfully, SUCCESS MODAL appeared ('Bewerbung erfolgreich!', 'Vielen Dank für dein Interesse an MORE Applications'), modal closed; (5) Kontakt form submitted, SUCCESS TOAST appeared ('Nachricht gesendet!'). TECHNICAL: No console errors, no network failures, no React overlays. Design: Light with orange accents, NO dark indigo. Content pivot complete and fully functional."
 
 metadata:
   created_by: "testing_agent"
   version: "1.0"
-  test_sequence: 2
+  test_sequence: 3
   run_ui: true
 
 test_plan:
   current_focus:
-    - "Backend rebrand testing complete - all tests passed"
+    - "Content pivot verification complete - all tests passed"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -177,3 +192,7 @@ agent_communication:
     message: "REBRAND to MORE Applications GmbH. Please run a FOCUSED BACKEND regression test (do not test frontend). Credentials in /app/memory/test_credentials.md (admin admin@webora.de / Kp9!xRv2Lq@Zm7Tn4&Q). Verify: (1) admin login works; (2) POST /api/applications/submit accepts a new application (use a unique email); (3) GET contract templates endpoint returns templates at template_version 5; (4) applicant login + my-contract retrieval works; (5) contract download (PDF/HTML) renders and contains 'MORE Applications GmbH' and NO 'Tdata'/'Mariusz'/'Ginsheim'. Report any 500s. This was a text-only change to contract/SMS strings + template version bump."
   - agent: "testing"
     message: "✅ BACKEND REBRAND VERIFICATION COMPLETE - ALL TESTS PASSED. Executed comprehensive regression test covering all 5 requested verification points plus additional checks. Results: (1) ✅ Admin login: Returns 200 + valid token; (2) ✅ Application submit: Accepts new applications with all required fields; (3) ✅ Contract templates: All 7 templates at version 5, contain 'MORE Applications GmbH', zero old branding; (4) ✅ Applicant flow: Login works, my-contract endpoint returns correct contract with new branding; (5) ✅ Contract download: Generated HTML contains 'MORE Applications GmbH', Hamburg address (Heinrich-Hertz-Str. 133, 22083 Hamburg), new signatory (Jens Olaf Brändel), NO old terms (Tdata/Mariusz/Ginsheim). No HTTP 500 errors, no stack traces, no missing endpoints. The text-only rebrand is fully functional."
+  - agent: "main"
+    message: "CONTENT PIVOT: Business repositioned from software DEVELOPMENT to software/application TESTING (QA agency). Public website content updated: Home page hero 'Wir finden Fehler, bevor Ihre Nutzer es tun', testing services (Funktionales Testing, Performance-Testing, Mobile App Testing, Usability-Testing, Testautomatisierung, Security- & API-Testing), testing job roles (Web Application Tester, QA Engineer, Mobile App Tester, Junior Test Analyst, Werkstudent Testing), Test-Tools band (Selenium, Cypress, Playwright, etc.). Please verify: (1) Content correctness on /, /dienstleistungen, /karriere pages; (2) CRITICAL: Karriere application form submission must work and show success modal; (3) Kontakt form submission must show success toast; (4) No console errors or React overlays."
+  - agent: "testing"
+    message: "✅ CONTENT PIVOT + FUNCTIONALITY VERIFICATION COMPLETE - ALL TESTS PASSED. Comprehensive testing of public website completed with 100% success rate across all verification points. CONTENT VERIFICATION: (1) ✅ Home page: Hero headline 'Wir finden Fehler, bevor Ihre Nutzer es tun', eyebrow 'Application Testing aus Hamburg', all 4 testing service cards present, NO development terms found, brand 'MORE Applications' present (3 occurrences), Hamburg location present (5 occurrences); (2) ✅ Dienstleistungen page: All 6 testing services present (Funktionales Testing, Performance- & Lasttests, Mobile App Testing, Usability-/UX-Testing, Testautomatisierung, Security- & API-Testing), Test-Tools band complete (6/6 tools: Selenium, Cypress, Playwright, Appium, JMeter, Postman); (3) ✅ Karriere page: All 5 testing job roles present (Web Application Tester, QA Engineer, Mobile App Tester, Junior Test Analyst, Werkstudent Testing), NO developer roles found. FUNCTIONALITY VERIFICATION: (4) ✅ CRITICAL - Karriere application form: Form filled with all required fields, CV uploaded, submission successful, SUCCESS MODAL appeared with 'Bewerbung erfolgreich!' and 'Vielen Dank für dein Interesse an MORE Applications', modal closed successfully; (5) ✅ Kontakt form: Form filled and submitted, SUCCESS TOAST appeared with 'Nachricht gesendet!'. TECHNICAL CHECKS: (6) ✅ No console errors detected; (7) ✅ No network failures detected; (8) ✅ No React error overlays detected. DESIGN: Light design with orange accents confirmed, NO dark indigo backgrounds. Content pivot from development to testing/QA agency is complete and fully functional."

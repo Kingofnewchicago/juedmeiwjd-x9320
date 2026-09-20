@@ -1,5 +1,11 @@
 # Prysm Technologies (ehemals Keyperion / Precision Labs) – PRD
 
+## 🟠 Inhaltskorrektur: Application TESTING statt Entwicklung (2026-07)
+- Nutzer stellte klar: MORE Applications GmbH **testet Software (Application Testing / QA)**, entwickelt sie nicht. Alle öffentlichen Seiten inhaltlich zurück auf Testing/QA umgestellt (Design/Orange/Name/Hamburg-Daten unverändert).
+- Home: „Wir finden Fehler, bevor Ihre Nutzer es tun", Services = Funktionales/Performance/Mobile/Usability-Testing, Prozess = Analyse→Testkonzept→Durchführung→Reporting, Stats = geprüfte Anwendungen/Testexperten. Unternehmen = Testing-Agentur-Story. Dienstleistungen = 6 Testing-Leistungen + Test-Tools-Band (Selenium/Cypress/Playwright/Appium/JMeter/Postman…). Karriere = Testing-Rollen (Web App Tester, QA Engineer, Mobile App Tester, Junior Test Analyst, Werkstudent Testing). Footer-Services + Meta-Description auf Testing. Backend-Vertragstexte („IT Application Testing") passen bereits.
+- Verifiziert per Frontend-Testing-Agent: Inhalte korrekt (Testing statt Dev), Bewerbungsformular POST /api/applications/submit → Success-Modal, Kontakt-Toast, keine Konsolen-/React-Fehler.
+
+
 ## 🟠 Restyle Indigo → Hell Orange/Weiß (2026-07)
 - Nutzer fand den dunklen Indigo-Look schlecht → kompletter Umstieg auf **hellen Weiß/Orange-Stil**. Palette (brand/sage) → Orange (#F97316 etc.), `ink` = warmes Near-Black nur noch für TEXT. `more-gradient-text` + grid + selection + Logo-Gradient + theme-color auf Orange.
 - Öffentliche Website: alle dunklen `bg-ink`-Hero-/Sektionen → helle Verläufe (from-orange-50 via-white), CTA-/Info-Karten → Orange-Gradient mit weißer Schrift, Buttons → Orange. Home/Unternehmen/Kontakt/Footer neu geschrieben; Dienstleistungen/Karriere/Impressum/Datenschutz + Navbar per gezielten Replace umgestellt.
