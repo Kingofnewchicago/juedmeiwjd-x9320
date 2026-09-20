@@ -171,16 +171,28 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ VERIFIED: Comprehensive content + functionality testing completed with 100% success rate. CONTENT: (1) Home page - Hero 'Wir finden Fehler, bevor Ihre Nutzer es tun', eyebrow 'Application Testing aus Hamburg', all 4 testing service cards present, NO development terms, brand 'MORE Applications' (3x), Hamburg (5x); (2) Dienstleistungen - All 6 testing services present, Test-Tools band complete (6/6 tools); (3) Karriere - All 5 testing job roles present, NO developer roles. FUNCTIONALITY: (4) CRITICAL - Karriere application form submitted successfully, SUCCESS MODAL appeared ('Bewerbung erfolgreich!', 'Vielen Dank für dein Interesse an MORE Applications'), modal closed; (5) Kontakt form submitted, SUCCESS TOAST appeared ('Nachricht gesendet!'). TECHNICAL: No console errors, no network failures, no React overlays. Design: Light with orange accents, NO dark indigo. Content pivot complete and fully functional."
+  
+  - task: "Replace favicon from green T logo to orange M logo with cache-busting"
+    implemented: true
+    working: true
+    file: "/app/frontend/public/favicon.svg, /app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED: Favicon fix verification completed with 100% success rate across all 8 verification points. (1) ✅ Favicon link found in <head> with exact href: https://yo-app-107.preview.emergentagent.com/favicon.svg?v=2; (2) ✅ Cache-buster '?v=2' present; (3) ✅ HTTP 200 response; (4) ✅ Content-Type: image/svg+xml; (5) ✅ New orange color '#F97316' found; (6) ✅ linearGradient found; (7) ✅ M-shaped path 'M52 146' found; (8) ✅ Old green color '#659A65' NOT present (correctly removed). SVG contains orange gradient colors: #FDBA74, #F97316, #EA580C, #FFFFFF, #FFE8D1. No console errors. The old green 'T' logo has been completely replaced with the new orange 'M' logo."
 
 metadata:
   created_by: "testing_agent"
   version: "1.0"
-  test_sequence: 3
+  test_sequence: 4
   run_ui: true
 
 test_plan:
   current_focus:
-    - "Content pivot verification complete - all tests passed"
+    - "Favicon fix verification complete - all tests passed"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -196,3 +208,7 @@ agent_communication:
     message: "CONTENT PIVOT: Business repositioned from software DEVELOPMENT to software/application TESTING (QA agency). Public website content updated: Home page hero 'Wir finden Fehler, bevor Ihre Nutzer es tun', testing services (Funktionales Testing, Performance-Testing, Mobile App Testing, Usability-Testing, Testautomatisierung, Security- & API-Testing), testing job roles (Web Application Tester, QA Engineer, Mobile App Tester, Junior Test Analyst, Werkstudent Testing), Test-Tools band (Selenium, Cypress, Playwright, etc.). Please verify: (1) Content correctness on /, /dienstleistungen, /karriere pages; (2) CRITICAL: Karriere application form submission must work and show success modal; (3) Kontakt form submission must show success toast; (4) No console errors or React overlays."
   - agent: "testing"
     message: "✅ CONTENT PIVOT + FUNCTIONALITY VERIFICATION COMPLETE - ALL TESTS PASSED. Comprehensive testing of public website completed with 100% success rate across all verification points. CONTENT VERIFICATION: (1) ✅ Home page: Hero headline 'Wir finden Fehler, bevor Ihre Nutzer es tun', eyebrow 'Application Testing aus Hamburg', all 4 testing service cards present, NO development terms found, brand 'MORE Applications' present (3 occurrences), Hamburg location present (5 occurrences); (2) ✅ Dienstleistungen page: All 6 testing services present (Funktionales Testing, Performance- & Lasttests, Mobile App Testing, Usability-/UX-Testing, Testautomatisierung, Security- & API-Testing), Test-Tools band complete (6/6 tools: Selenium, Cypress, Playwright, Appium, JMeter, Postman); (3) ✅ Karriere page: All 5 testing job roles present (Web Application Tester, QA Engineer, Mobile App Tester, Junior Test Analyst, Werkstudent Testing), NO developer roles found. FUNCTIONALITY VERIFICATION: (4) ✅ CRITICAL - Karriere application form: Form filled with all required fields, CV uploaded, submission successful, SUCCESS MODAL appeared with 'Bewerbung erfolgreich!' and 'Vielen Dank für dein Interesse an MORE Applications', modal closed successfully; (5) ✅ Kontakt form: Form filled and submitted, SUCCESS TOAST appeared with 'Nachricht gesendet!'. TECHNICAL CHECKS: (6) ✅ No console errors detected; (7) ✅ No network failures detected; (8) ✅ No React error overlays detected. DESIGN: Light design with orange accents confirmed, NO dark indigo backgrounds. Content pivot from development to testing/QA agency is complete and fully functional."
+  - agent: "user"
+    message: "Verify the browser tab favicon (Fav-Icon) fix on the MORE Applications website. Context: The old favicon was a GREEN 'T' logo (color #659A65). It was replaced with a new ORANGE 'M' logo (orange gradient, primary color #F97316). We also added a cache-busting query (?v=2). Please verify on the public site (open the home page '/'): (1) Read the document <head> and confirm there is a <link rel='icon'> whose href points to a favicon.svg (it should include the cache-buster '?v=2'). Report the exact href. (2) Fetch/open that favicon.svg URL directly (e.g. navigate to /favicon.svg?v=2 or request it) and confirm the SVG content is the NEW orange logo: it should contain an orange color like '#F97316' (and/or a linearGradient) and an 'M'-shaped path 'M52 146'. It must NOT contain the old green color '#659A65'. (3) Confirm the favicon request returns HTTP 200 with content-type image/svg+xml. (4) Report any console errors on the home page."
+  - agent: "testing"
+    message: "✅ FAVICON FIX VERIFICATION COMPLETE - ALL CHECKS PASSED. Comprehensive favicon verification completed with 100% success rate across all 8 verification points. RESULTS: (1) ✅ Favicon link found in <head> with exact href: https://yo-app-107.preview.emergentagent.com/favicon.svg?v=2; (2) ✅ Cache-buster '?v=2' is present in href; (3) ✅ Favicon request returns HTTP 200; (4) ✅ Content-Type is correct: image/svg+xml; (5) ✅ New orange color '#F97316' found in SVG content; (6) ✅ linearGradient found in SVG; (7) ✅ M-shaped path 'M52 146' found in SVG; (8) ✅ Old green color '#659A65' is NOT present (correctly removed). SVG CONTENT ANALYSIS: All hex colors found in the new favicon: #FDBA74, #F97316, #EA580C, #FFFFFF, #FFE8D1 (orange gradient + white + cream). NO console errors detected on home page. CONCLUSION: The favicon fix is correctly deployed - the old green 'T' logo has been completely replaced with the new orange 'M' logo, and the cache-busting query parameter is working as expected.""

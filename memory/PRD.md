@@ -1,5 +1,10 @@
 # Prysm Technologies (ehemals Keyperion / Precision Labs) – PRD
 
+## 🟠 Favicon + restliche Vertrags-Altdaten (2026-07)
+- **Favicon:** `frontend/public/favicon.svg` von altem grünem „T" (#659A65) auf neues oranges MORE-„M" (Gradient #FDBA74→#F97316→#EA580C, „M"-Pfad) umgestellt; Cache-Buster `?v=2` in index.html. Per Frontend-Testing-Agent verifiziert (8/8: neues Icon, 200, image/svg+xml, kein Grün, keine Konsolenfehler).
+- **Restliche Vertrags-Altdaten im Frontend behoben** (beim ersten Rebrand nur Backend ersetzt): `MitarbeiterVertrag.jsx`, `MitarbeiterContractSign.jsx` (inkl. Unterzeichner + Ort), `ContractTemplates.jsx` → MORE Applications GmbH, Heinrich-Hertz-Str. 133, 22083 Hamburg, Geschäftsführer Jens Olaf Brändel. SMS-Absender-Default PrecisionLab→MOREApps. Full-Repo-Scan: 0 Altdaten-Treffer.
+
+
 ## 🟠 Inhaltskorrektur: Application TESTING statt Entwicklung (2026-07)
 - Nutzer stellte klar: MORE Applications GmbH **testet Software (Application Testing / QA)**, entwickelt sie nicht. Alle öffentlichen Seiten inhaltlich zurück auf Testing/QA umgestellt (Design/Orange/Name/Hamburg-Daten unverändert).
 - Home: „Wir finden Fehler, bevor Ihre Nutzer es tun", Services = Funktionales/Performance/Mobile/Usability-Testing, Prozess = Analyse→Testkonzept→Durchführung→Reporting, Stats = geprüfte Anwendungen/Testexperten. Unternehmen = Testing-Agentur-Story. Dienstleistungen = 6 Testing-Leistungen + Test-Tools-Band (Selenium/Cypress/Playwright/Appium/JMeter/Postman…). Karriere = Testing-Rollen (Web App Tester, QA Engineer, Mobile App Tester, Junior Test Analyst, Werkstudent Testing). Footer-Services + Meta-Description auf Testing. Backend-Vertragstexte („IT Application Testing") passen bereits.

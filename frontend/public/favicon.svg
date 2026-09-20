@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <rect x="10" y="10" width="180" height="180" rx="14" fill="#659A65"/>
-  <rect x="10" y="10" width="180" height="180" rx="14" fill="none" stroke="#507D50" stroke-width="3"/>
-  <g fill="#FFFFFF">
-    <rect x="46" y="52" width="108" height="20" rx="2"/>
-    <rect x="90" y="52" width="20" height="96" rx="2"/>
-    <rect x="74" y="140" width="52" height="12" rx="2"/>
-    <rect x="46" y="52" width="12" height="16" rx="2"/>
-    <rect x="142" y="52" width="12" height="16" rx="2"/>
-  </g>
+  <defs>
+    <linearGradient id="mfav" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FDBA74"/>
+      <stop offset="0.55" stop-color="#F97316"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="184" height="184" rx="42" fill="url(#mfav)"/>
+  <path d="M52 146 V70 L100 116 L148 70 V146" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="100" cy="150" r="9" fill="#FFE8D1"/>
 </svg>
