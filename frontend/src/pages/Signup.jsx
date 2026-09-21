@@ -122,7 +122,7 @@ const Signup = () => {
             </div>
 
             <div className="flex items-center gap-2 text-sm text-ink/55">
-              <ShieldCheck size={16} className="text-orange-600" /> Seriöser Arbeitgeber · MORE Applications GmbH, Hamburg
+              <ShieldCheck size={16} className="text-orange-600" /> MORE Applications GmbH · Heinrich-Hertz-Str. 133, 22083 Hamburg
             </div>
           </div>
 
@@ -146,8 +146,7 @@ const Signup = () => {
                 </div>
               ) : (
                 <>
-                  <h2 className="font-heading text-2xl font-bold text-ink mb-1">Jetzt in 60 Sekunden bewerben</h2>
-                  <p className="text-sm text-ink/55 mb-6">Kein Lebenslauf nötig – Upload optional.</p>
+                  <h2 className="font-heading text-2xl font-bold text-ink mb-6">Jetzt in 60 Sekunden bewerben</h2>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label className="block text-sm font-semibold text-ink mb-1.5">Name *</label>
