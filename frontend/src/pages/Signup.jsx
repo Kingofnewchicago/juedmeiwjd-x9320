@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
   CheckCircle, Euro, Palmtree, Gift, Home as HomeIcon, ShieldCheck,
-  Send, Upload, ArrowRight,
+  Send, Upload, ArrowRight, Laptop, GraduationCap, TrendingUp, Ticket,
 } from 'lucide-react';
 import { MoreLogo } from '../components/Logo';
 
@@ -13,6 +13,10 @@ const perks = [
   { icon: Palmtree, title: '30 Urlaubstage', desc: 'Für echte Erholung' },
   { icon: Gift, title: 'Weihnachts- & Geburtstagsgeld', desc: 'Jeweils doppelter Monatslohn' },
   { icon: HomeIcon, title: '100 % Homeoffice', desc: 'Arbeite von überall' },
+  { icon: Laptop, title: 'Firmenlaptop', desc: 'Moderne Ausstattung inklusive' },
+  { icon: GraduationCap, title: 'Weiterbildung', desc: 'Schulungen & Zertifizierungen' },
+  { icon: TrendingUp, title: 'Karrierechancen', desc: 'Entwickle dich weiter bei uns' },
+  { icon: Ticket, title: 'Deutschlandticket', desc: 'Von uns bezahlt' },
 ];
 
 const Signup = () => {
