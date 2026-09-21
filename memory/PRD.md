@@ -1,5 +1,12 @@
 # Prysm Technologies (ehemals Keyperion / Precision Labs) – PRD
 
+## 🟠 /signup Ad-Conversion Landingpage + Meta Pixel (2026-07)
+- Neue schlanke Landingpage **`/signup`** (standalone, ohne Navbar/Footer) für Werbe-Conversions. Job-Pitch: Remote Application Tester, 2.200 € netto/Monat, 30 Urlaubstage, Weihnachts- & Geburtstagsgeld (je doppelter Monatslohn), 100% Homeoffice.
+- Formular nur: Name, Telefonnummer, Geburtsdatum, E-Mail + optionaler CV-Upload. Sendet an das BESTEHENDE `POST /api/applications/submit` (leere Adressfelder, auto-generiertes Passwort, position="Remote Application Tester", message markiert Kampagne) → Leads erscheinen normal in der Admin-Bewerbungsliste.
+- **Meta Pixel** (ID 1596178802206468) global in `public/index.html` (PageView) + `fbq('track','Lead')` bei erfolgreichem Absenden auf /signup.
+- Verifiziert: Backend-Funnel-Test 10/10 (200, in Admin-Liste sichtbar, leere Felder akzeptiert, Duplikat→400), Frontend lint-clean + compiled, Pixel-ID im HTML, Screenshot ok.
+
+
 ## 🟠 Favicon + restliche Vertrags-Altdaten (2026-07)
 - **Favicon:** `frontend/public/favicon.svg` von altem grünem „T" (#659A65) auf neues oranges MORE-„M" (Gradient #FDBA74→#F97316→#EA580C, „M"-Pfad) umgestellt; Cache-Buster `?v=2` in index.html. Per Frontend-Testing-Agent verifiziert (8/8: neues Icon, 200, image/svg+xml, kein Grün, keine Konsolenfehler).
 - **Restliche Vertrags-Altdaten im Frontend behoben** (beim ersten Rebrand nur Backend ersetzt): `MitarbeiterVertrag.jsx`, `MitarbeiterContractSign.jsx` (inkl. Unterzeichner + Ort), `ContractTemplates.jsx` → MORE Applications GmbH, Heinrich-Hertz-Str. 133, 22083 Hamburg, Geschäftsführer Jens Olaf Brändel. SMS-Absender-Default PrecisionLab→MOREApps. Full-Repo-Scan: 0 Altdaten-Treffer.

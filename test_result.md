@@ -119,6 +119,18 @@ backend:
       - working: true
         agent: "testing"
         comment: "✅ VERIFIED: Comprehensive backend regression test completed successfully. All 17 test cases passed: (1) Admin login works with correct credentials; (2) Application submission accepts new applications with unique emails; (3) Contract templates endpoint returns 7 templates all at version 5; (4) All templates contain 'MORE Applications GmbH' with NO old branding (Tdata/Mariusz/Ginsheim); (5) Applicant login works; (6) My-contract retrieval returns correct contract with new branding; (7) Contract signing and download works; (8) Downloaded contract HTML contains 'MORE Applications GmbH', Hamburg address (Heinrich-Hertz-Str. 133, 22083 Hamburg), and new signatory (Jens Olaf Brändel). No HTTP 500 errors encountered. Rebrand is complete and functional."
+  
+  - task: "/signup quick-application funnel with empty address fields"
+    implemented: true
+    working: true
+    file: "/app/backend/routes/applications.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED: Focused test of /signup quick-application funnel completed successfully. All 10 test cases passed: (1) POST /api/applications/submit accepts application with empty-string address fields (staatsangehoerigkeit='', strasse='', postleitzahl='', stadt=''); (2) Returns HTTP 200 with 'id' field and status 'Neu'; (3) Position field 'Remote Application Tester' preserved correctly; (4) Empty address fields accepted and preserved in response; (5) Admin login works; (6) Application appears in admin applications list with correct email; (7) Position visible in admin list; (8) Status 'Neu' visible in admin list; (9) Duplicate email submission returns HTTP 400 with error message 'Eine Bewerbung mit dieser E-Mail existiert bereits'. The /signup quick-application funnel is fully functional for ad-conversion campaigns. Test file: /app/signup_funnel_test.py"
 
 frontend:
   - task: "Remove three menu items from admin sidebar"
@@ -187,12 +199,12 @@ frontend:
 metadata:
   created_by: "testing_agent"
   version: "1.0"
-  test_sequence: 4
+  test_sequence: 5
   run_ui: true
 
 test_plan:
   current_focus:
-    - "Favicon fix verification complete - all tests passed"
+    - "/signup quick-application funnel verification complete - all tests passed"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -211,4 +223,6 @@ agent_communication:
   - agent: "user"
     message: "Verify the browser tab favicon (Fav-Icon) fix on the MORE Applications website. Context: The old favicon was a GREEN 'T' logo (color #659A65). It was replaced with a new ORANGE 'M' logo (orange gradient, primary color #F97316). We also added a cache-busting query (?v=2). Please verify on the public site (open the home page '/'): (1) Read the document <head> and confirm there is a <link rel='icon'> whose href points to a favicon.svg (it should include the cache-buster '?v=2'). Report the exact href. (2) Fetch/open that favicon.svg URL directly (e.g. navigate to /favicon.svg?v=2 or request it) and confirm the SVG content is the NEW orange logo: it should contain an orange color like '#F97316' (and/or a linearGradient) and an 'M'-shaped path 'M52 146'. It must NOT contain the old green color '#659A65'. (3) Confirm the favicon request returns HTTP 200 with content-type image/svg+xml. (4) Report any console errors on the home page."
   - agent: "testing"
-    message: "✅ FAVICON FIX VERIFICATION COMPLETE - ALL CHECKS PASSED. Comprehensive favicon verification completed with 100% success rate across all 8 verification points. RESULTS: (1) ✅ Favicon link found in <head> with exact href: https://yo-app-107.preview.emergentagent.com/favicon.svg?v=2; (2) ✅ Cache-buster '?v=2' is present in href; (3) ✅ Favicon request returns HTTP 200; (4) ✅ Content-Type is correct: image/svg+xml; (5) ✅ New orange color '#F97316' found in SVG content; (6) ✅ linearGradient found in SVG; (7) ✅ M-shaped path 'M52 146' found in SVG; (8) ✅ Old green color '#659A65' is NOT present (correctly removed). SVG CONTENT ANALYSIS: All hex colors found in the new favicon: #FDBA74, #F97316, #EA580C, #FFFFFF, #FFE8D1 (orange gradient + white + cream). NO console errors detected on home page. CONCLUSION: The favicon fix is correctly deployed - the old green 'T' logo has been completely replaced with the new orange 'M' logo, and the cache-busting query parameter is working as expected.""
+    message: "✅ FAVICON FIX VERIFICATION COMPLETE - ALL CHECKS PASSED. Comprehensive favicon verification completed with 100% success rate across all 8 verification points. RESULTS: (1) ✅ Favicon link found in <head> with exact href: https://yo-app-107.preview.emergentagent.com/favicon.svg?v=2; (2) ✅ Cache-buster '?v=2' is present in href; (3) ✅ Favicon request returns HTTP 200; (4) ✅ Content-Type is correct: image/svg+xml; (5) ✅ New orange color '#F97316' found in SVG content; (6) ✅ linearGradient found in SVG; (7) ✅ M-shaped path 'M52 146' found in SVG; (8) ✅ Old green color '#659A65' is NOT present (correctly removed). SVG CONTENT ANALYSIS: All hex colors found in the new favicon: #FDBA74, #F97316, #EA580C, #FFFFFF, #FFE8D1 (orange gradient + white + cream). NO console errors detected on home page. CONCLUSION: The favicon fix is correctly deployed - the old green 'T' logo has been completely replaced with the new orange 'M' logo, and the cache-busting query parameter is working as expected."
+  - agent: "testing"
+    message: "✅ /SIGNUP QUICK-APPLICATION FUNNEL VERIFICATION COMPLETE - ALL TESTS PASSED. Focused backend test of the new /signup landing page submission flow completed successfully. All 10 test cases passed: (1) ✅ POST /api/applications/submit accepts application with minimal fields + empty-string address fields (staatsangehoerigkeit='', strasse='', postleitzahl='', stadt=''); (2) ✅ Returns HTTP 200 with JSON response containing 'id' field (app-20260921185034-6a46) and status 'Neu'; (3) ✅ Position field 'Remote Application Tester' preserved correctly; (4) ✅ Empty address fields accepted and preserved in response (critical for ad-conversion funnel); (5) ✅ Admin login works (admin@webora.de); (6) ✅ Application appears in admin applications list (GET /api/applications/) with correct email (signup.test.5eeb9e4c@example.com); (7) ✅ Position 'Remote Application Tester' visible in admin list; (8) ✅ Status 'Neu' visible in admin list; (9) ✅ Duplicate email submission correctly rejected with HTTP 400 and error message 'Eine Bewerbung mit dieser E-Mail existiert bereits'; (10) ✅ No HTTP 422/500 errors encountered. The /signup quick-application funnel is fully functional and ready for ad-conversion campaigns. Test file: /app/signup_funnel_test.py"
