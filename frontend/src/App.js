@@ -10,6 +10,7 @@ import Kontakt from "@/pages/Kontakt";
 import Impressum from "@/pages/Impressum";
 import Datenschutz from "@/pages/Datenschutz";
 import Signup from "@/pages/Signup";
+import Bewerben from "@/pages/Bewerben";
 import AdminLogin from "@/pages/admin/AdminLogin";
 import AdminDashboard from "@/pages/admin/AdminDashboard";
 import AdminApplications from "@/pages/admin/AdminApplications";
@@ -57,6 +58,7 @@ function App() {
           <Route path="/impressum" element={<><Navbar /><Impressum /><Footer /></>} />
           <Route path="/datenschutz" element={<><Navbar /><Datenschutz /><Footer /></>} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/bewerben" element={<Bewerben />} />
           
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
