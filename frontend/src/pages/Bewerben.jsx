@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {
   CheckCircle, Euro, Palmtree, Gift, Home as HomeIcon, ShieldCheck,
-  Send, Upload, ArrowRight, Laptop, GraduationCap, TrendingUp, Ticket,
+  Send, Upload, ArrowRight, Laptop, GraduationCap, TrendingUp, Ticket, Plus, X,
 } from 'lucide-react';
 import { MoreLogo } from '../components/Logo';
 
@@ -20,7 +20,8 @@ const perks = [
 ];
 
 const Bewerben = () => {
-  const [form, setForm] = useState({ name: '', mobilnummer: '', geburtsdatum: '', email: '', staatsangehoerigkeit: '', cv: null });
+  const [form, setForm] = useState({ name: '', mobilnummer: '', geburtsdatum: '', email: '', cv: null });
+  const [nationalities, setNationalities] = useState(['']);
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState('');
@@ -33,6 +34,11 @@ const Bewerben = () => {
     const f = e.target.files[0];
     if (f) setForm((p) => ({ ...p, cv: f }));
   };
+  const updateNationality = (i, value) =>
+    setNationalities((prev) => prev.map((n, idx) => (idx === i ? value : n)));
+  const addNationality = () => setNationalities((prev) => [...prev, '']);
+  const removeNationality = (i) =>
+    setNationalities((prev) => (prev.length > 1 ? prev.filter((_, idx) => idx !== i) : prev));
 
   const genPassword = () =>
     'A1a!' + Math.random().toString(36).slice(2, 10) + Math.random().toString(36).slice(2, 6);
@@ -40,6 +46,11 @@ const Bewerben = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    const cleanNationalities = nationalities.map((n) => n.trim()).filter(Boolean);
+    if (cleanNationalities.length === 0) {
+      setError('Bitte gib mindestens eine Staatsbürgerschaft an.');
+      return;
+    }
     setSubmitting(true);
     try {
       await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/applications/submit`, {
@@ -47,12 +58,12 @@ const Bewerben = () => {
         email: form.email,
         mobilnummer: form.mobilnummer,
         geburtsdatum: form.geburtsdatum,
-        staatsangehoerigkeit: form.staatsangehoerigkeit,
+        staatsangehoerigkeit: cleanNationalities.join(', '),
         strasse: '',
         postleitzahl: '',
         stadt: '',
         position: POSITION,
-        message: 'Schnellbewerbung über /signup (Kampagne)',
+        message: 'Schnellbewerbung über /bewerben',
         password: genPassword(),
         cv_filename: form.cv ? form.cv.name : null,
         referral_slug: null,
@@ -163,7 +174,38 @@ const Bewerben = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-ink mb-1.5">Staatsbürgerschaft *</label>
-                      <input name="staatsangehoerigkeit" value={form.staatsangehoerigkeit} onChange={handleChange} required placeholder="z. B. Deutsch" className={inputClass} data-testid="bewerben-nationality" />
+                      <div className="space-y-2">
+                        {nationalities.map((nat, i) => (
+                          <div key={i} className="flex items-center gap-2">
+                            <input
+                              value={nat}
+                              onChange={(e) => updateNationality(i, e.target.value)}
+                              required={i === 0}
+                              placeholder="z. B. Deutsch"
+                              className={inputClass}
+                              data-testid={`bewerben-nationality-${i}`}
+                            />
+                            {nationalities.length > 1 && (
+                              <button
+                                type="button"
+                                onClick={() => removeNationality(i)}
+                                className="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-xl border border-orange-100 text-ink/50 hover:text-orange-600 hover:border-orange-300 transition-colors"
+                                aria-label="Staatsbürgerschaft entfernen"
+                              >
+                                <X size={18} />
+                              </button>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={addNationality}
+                        className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-orange-600 hover:text-orange-700 transition-colors"
+                        data-testid="bewerben-add-nationality"
+                      >
+                        <Plus size={16} /> Weitere Staatsbürgerschaft hinzufügen
+                      </button>
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-ink mb-1.5">Lebenslauf <span className="text-ink/40 font-normal">(optional)</span></label>
