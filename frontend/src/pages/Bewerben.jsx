@@ -20,7 +20,7 @@ const perks = [
 ];
 
 const Bewerben = () => {
-  const [form, setForm] = useState({ name: '', mobilnummer: '', geburtsdatum: '', email: '', cv: null });
+  const [form, setForm] = useState({ name: '', mobilnummer: '', geburtsdatum: '', email: '', staatsangehoerigkeit: '', cv: null });
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState('');
@@ -47,7 +47,7 @@ const Bewerben = () => {
         email: form.email,
         mobilnummer: form.mobilnummer,
         geburtsdatum: form.geburtsdatum,
-        staatsangehoerigkeit: '',
+        staatsangehoerigkeit: form.staatsangehoerigkeit,
         strasse: '',
         postleitzahl: '',
         stadt: '',
@@ -160,6 +160,10 @@ const Bewerben = () => {
                     <div>
                       <label className="block text-sm font-semibold text-ink mb-1.5">E-Mail *</label>
                       <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="deine@email.de" className={inputClass} data-testid="signup-email" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-ink mb-1.5">Staatsbürgerschaft *</label>
+                      <input name="staatsangehoerigkeit" value={form.staatsangehoerigkeit} onChange={handleChange} required placeholder="z. B. Deutsch" className={inputClass} data-testid="bewerben-nationality" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-ink mb-1.5">Lebenslauf <span className="text-ink/40 font-normal">(optional)</span></label>
