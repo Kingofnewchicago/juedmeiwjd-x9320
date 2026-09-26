@@ -404,7 +404,7 @@ const MitarbeiterVertrag = () => {
               <li>• Lesen Sie den Vertrag sorgfältig durch bevor Sie unterschreiben</li>
               <li>• Ihre digitale Unterschrift ist rechtlich bindend</li>
               <li>• Nach der Unterschrift können Sie den Vertrag als PDF herunterladen</li>
-              <li>• Bei Fragen wenden Sie sich an hr@more-applications.de</li>
+              <li>• Bei Fragen wenden Sie sich an hr@more-apps.de</li>
             </ul>
           </div>
         </div>

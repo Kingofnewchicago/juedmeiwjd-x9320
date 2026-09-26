@@ -59,9 +59,9 @@ export const Footer = () => {
             </p>
 
             <div className="space-y-3">
-              <a href="mailto:info@more-applications.de" className="inline-flex items-center gap-3 text-ink/70 hover:text-orange-600 transition-colors" data-testid="footer-email">
+              <a href="mailto:team@more-apps.de" className="inline-flex items-center gap-3 text-ink/70 hover:text-orange-600 transition-colors" data-testid="footer-email">
                 <Mail size={18} className="text-orange-500" />
-                info@more-applications.de
+                team@more-apps.de
               </a>
               <div className="flex items-start gap-3 text-ink/70">
                 <MapPin size={18} className="text-orange-500 mt-0.5" />

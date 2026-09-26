@@ -22,7 +22,7 @@ const Datenschutz = () => {
         <div className="max-w-4xl mx-auto px-6 md:px-8">
           <Section title="1. Verantwortlicher">
             <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-            <p className="text-ink font-medium">MORE Applications GmbH<br />Heinrich-Hertz-Str. 133, 22083 Hamburg, Deutschland<br />E-Mail: <a href="mailto:info@more-applications.de" className="text-brand-600 hover:underline">info@more-applications.de</a></p>
+            <p className="text-ink font-medium">MORE Applications GmbH<br />Heinrich-Hertz-Str. 133, 22083 Hamburg, Deutschland<br />E-Mail: <a href="mailto:team@more-apps.de" className="text-brand-600 hover:underline">team@more-apps.de</a></p>
           </Section>
           <Section title="2. Erhebung und Speicherung personenbezogener Daten">
             <p>Wir erheben personenbezogene Daten, wenn Sie uns diese im Rahmen einer Kontaktanfrage, Bewerbung oder Projektanfrage freiwillig mitteilen. Dazu gehören insbesondere Name, E-Mail-Adresse, Telefonnummer sowie die von Ihnen übermittelten Inhalte.</p>
@@ -43,7 +43,7 @@ const Datenschutz = () => {
             <p>Wir speichern personenbezogene Daten nur so lange, wie es für die genannten Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen dies vorsehen.</p>
           </Section>
           <Section title="8. Kontakt zum Datenschutz">
-            <p>Bei Fragen zum Datenschutz erreichen Sie uns unter <a href="mailto:info@more-applications.de" className="text-brand-600 hover:underline">info@more-applications.de</a>.</p>
+            <p>Bei Fragen zum Datenschutz erreichen Sie uns unter <a href="mailto:team@more-apps.de" className="text-brand-600 hover:underline">team@more-apps.de</a>.</p>
           </Section>
         </div>
       </section>

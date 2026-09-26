@@ -1,5 +1,13 @@
 # Prysm Technologies (ehemals Keyperion / Precision Labs) – PRD
 
+## 🟠 team@more-apps.de + Aufgaben-Gruppenzuweisung + /bewerben (2026-07)
+- **Kontakt-E-Mail** überall → `team@more-apps.de` (Footer/Kontakt/Impressum/Datenschutz); HR → `hr@more-apps.de` (Domain-Konsistenz, more-applications.de nicht im Besitz).
+- **AdminTasks – Gruppenzuweisung:** neuer „Alle auswählen/abwählen ({N})"-Button im Zuweisungs-Modal (bezogen auf aktuelle Suche/Filterung) → eine Aufgabe an ganze Gruppe gleichzeitig via bestehendes `PUT /api/admin/tasks/{id}/assign-multiple`.
+- **Bugfix:** `setAiAppName is not defined` in AdminTasks.jsx (Crash beim Aufgabe-Erstellen) entfernt.
+- **/bewerben:** identisch zu /signup aber OHNE Meta-Pixel (Guard in index.html überspringt init+PageView auf /bewerben; Component pixel-frei); zusätzlich Staatsbürgerschaft als dynamische Mehrfach-Eingabe („+ Weitere hinzufügen", join per Komma).
+- Verifiziert per Frontend-Testing-Agent: Admin-Login, Task-Erstellung ohne Crash, Alle-auswählen-Toggle, Mehrfachzuweisung („an 2 Mitarbeiter zugewiesen"), keine Konsolenfehler.
+
+
 ## 🟠 /signup Ad-Conversion Landingpage + Meta Pixel (2026-07)
 - Neue schlanke Landingpage **`/signup`** (standalone, ohne Navbar/Footer) für Werbe-Conversions. Job-Pitch: Remote Application Tester, 2.200 € netto/Monat, 30 Urlaubstage, Weihnachts- & Geburtstagsgeld (je doppelter Monatslohn), 100% Homeoffice.
 - Formular nur: Name, Telefonnummer, Geburtsdatum, E-Mail + optionaler CV-Upload. Sendet an das BESTEHENDE `POST /api/applications/submit` (leere Adressfelder, auto-generiertes Passwort, position="Remote Application Tester", message markiert Kampagne) → Leads erscheinen normal in der Admin-Bewerbungsliste.

@@ -82,11 +82,11 @@ const Kontakt = () => {
 
           {/* Info */}
           <div className="lg:col-span-2 space-y-5">
-            <a href="mailto:info@more-applications.de" className="flex items-start gap-4 rounded-2xl border border-orange-100 p-6 hover:border-orange-300 transition-colors group" data-testid="contact-email-link">
+            <a href="mailto:team@more-apps.de" className="flex items-start gap-4 rounded-2xl border border-orange-100 p-6 hover:border-orange-300 transition-colors group" data-testid="contact-email-link">
               <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition-colors"><Mail className="text-orange-600 group-hover:text-white transition-colors" size={22} /></div>
               <div>
                 <p className="font-heading font-bold text-ink">E-Mail</p>
-                <p className="text-sm text-ink/60 mt-1">info@more-applications.de</p>
+                <p className="text-sm text-ink/60 mt-1">team@more-apps.de</p>
               </div>
             </a>
             <div className="flex items-start gap-4 rounded-2xl border border-orange-100 p-6">

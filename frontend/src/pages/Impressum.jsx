@@ -29,7 +29,7 @@ const Impressum = () => {
             <Row label="Registernummer">HRB 191673</Row>
             <Row label="EUID">DEK1101R.HRB191673</Row>
             <Row label="USt-IdNr.">DE134894775</Row>
-            <Row label="E-Mail"><a href="mailto:info@more-applications.de" className="text-brand-600 hover:underline">info@more-applications.de</a></Row>
+            <Row label="E-Mail"><a href="mailto:team@more-apps.de" className="text-brand-600 hover:underline">team@more-apps.de</a></Row>
           </dl>
 
           <div className="space-y-10 text-ink/70 leading-relaxed">

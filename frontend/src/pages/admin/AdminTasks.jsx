@@ -102,7 +102,6 @@ const AdminTasks = () => {
       
       toast.success('Aufgabe erfolgreich erstellt');
       setShowForm(false);
-      setAiAppName('');
       setFormData({
         title: '',
         category: '',
@@ -232,6 +231,29 @@ const AdminTasks = () => {
         [field]: value
       }
     }));
+  };
+
+  // Select / deselect ALL currently filtered employees at once (for big groups)
+  const emptyCreds = () => ({ test_ident_link: '', test_login_email: '', test_login_password: '', test_phone_number: '' });
+  const toggleSelectAllFiltered = () => {
+    const filteredIds = filteredEmployees.map((e) => e.id);
+    const allSelected = filteredIds.length > 0 && filteredIds.every((id) => selectedEmployees.includes(id));
+    if (allSelected) {
+      const removeSet = new Set(filteredIds);
+      setSelectedEmployees((prev) => prev.filter((id) => !removeSet.has(id)));
+      setEmployeeCredentials((prev) => {
+        const next = { ...prev };
+        filteredIds.forEach((id) => delete next[id]);
+        return next;
+      });
+    } else {
+      setSelectedEmployees((prev) => Array.from(new Set([...prev, ...filteredIds])));
+      setEmployeeCredentials((prev) => {
+        const next = { ...prev };
+        filteredIds.forEach((id) => { if (!next[id]) next[id] = emptyCreds(); });
+        return next;
+      });
+    }
   };
 
   const goToCredentialsStep = () => {
@@ -909,6 +931,26 @@ const AdminTasks = () => {
                       data-testid="employee-search-input"
                     />
                   </div>
+
+                  {/* Select all / deselect all (whole group) */}
+                  {filteredEmployees.length > 0 && (
+                    <div className="flex items-center justify-between gap-2">
+                      <button
+                        type="button"
+                        onClick={toggleSelectAllFiltered}
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-[#7aa2f7] text-[#7aa2f7] text-sm font-medium hover:bg-[#7aa2f7]/10 transition-colors"
+                        data-testid="select-all-employees"
+                      >
+                        <Check size={15} />
+                        {filteredEmployees.every((e) => selectedEmployees.includes(e.id))
+                          ? `Alle abwählen (${filteredEmployees.length})`
+                          : `Alle auswählen (${filteredEmployees.length})`}
+                      </button>
+                      <span className="text-[#565f89] text-xs">
+                        {searchTerm ? 'gefiltert' : 'gesamte Gruppe'}
+                      </span>
+                    </div>
+                  )}
 
                   {/* Selected count */}
                   {selectedEmployees.length > 0 && (

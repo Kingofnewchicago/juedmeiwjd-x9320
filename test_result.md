@@ -195,16 +195,40 @@ frontend:
       - working: true
         agent: "testing"
         comment: "✅ VERIFIED: Favicon fix verification completed with 100% success rate across all 8 verification points. (1) ✅ Favicon link found in <head> with exact href: https://yo-app-107.preview.emergentagent.com/favicon.svg?v=2; (2) ✅ Cache-buster '?v=2' present; (3) ✅ HTTP 200 response; (4) ✅ Content-Type: image/svg+xml; (5) ✅ New orange color '#F97316' found; (6) ✅ linearGradient found; (7) ✅ M-shaped path 'M52 146' found; (8) ✅ Old green color '#659A65' NOT present (correctly removed). SVG contains orange gradient colors: #FDBA74, #F97316, #EA580C, #FFFFFF, #FFE8D1. No console errors. The old green 'T' logo has been completely replaced with the new orange 'M' logo."
+  
+  - task: "Admin task creation bugfix - fix 'setAiAppName is not defined' error"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/admin/AdminTasks.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED: Task creation bugfix confirmed working. Created test task 'Test Task 6614' with category BD, all required fields (title, category, website, priority, provision, description fields). Task was created successfully with success toast 'Aufgabe erfolgreich erstellt' and appeared in task list. CRITICAL: NO console errors detected during task creation - specifically NO 'setAiAppName is not defined' error. The bugfix is confirmed working correctly."
+  
+  - task: "Admin multi-assignment feature - assign one task to multiple people with 'Alle auswählen' group select"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/admin/AdminTasks.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ VERIFIED: Multi-assignment feature with group select working perfectly. Test results: (1) ✅ Assignment modal opens correctly showing 'Schritt 1: Mitarbeiter auswählen'; (2) ✅ 'Alle auswählen (N)' button present and functional - correctly shows count of available employees; (3) ✅ Clicking 'Alle auswählen' selects ALL employees (tested with 2 employees, showed '2 Mitarbeiter ausgewählt'); (4) ✅ Toggle functionality works - clicking again deselects all employees, button text changes back to 'Alle auswählen'; (5) ✅ Proceeding to Step 2 'Test-Zugangsdaten eingeben' works correctly; (6) ✅ Assignment saves successfully with success toast 'Aufgabe an 2 Mitarbeiter zugewiesen'; (7) ✅ Modal closes after assignment; (8) ✅ Task display updates to show '2 Mitarbeiter' assigned. The entire group-select and multi-assignment flow is fully functional."
 
 metadata:
   created_by: "testing_agent"
   version: "1.0"
-  test_sequence: 5
+  test_sequence: 6
   run_ui: true
 
 test_plan:
   current_focus:
-    - "/signup quick-application funnel verification complete - all tests passed"
+    - "Admin task creation and multi-assignment features verification complete - all tests passed"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -226,3 +250,5 @@ agent_communication:
     message: "✅ FAVICON FIX VERIFICATION COMPLETE - ALL CHECKS PASSED. Comprehensive favicon verification completed with 100% success rate across all 8 verification points. RESULTS: (1) ✅ Favicon link found in <head> with exact href: https://yo-app-107.preview.emergentagent.com/favicon.svg?v=2; (2) ✅ Cache-buster '?v=2' is present in href; (3) ✅ Favicon request returns HTTP 200; (4) ✅ Content-Type is correct: image/svg+xml; (5) ✅ New orange color '#F97316' found in SVG content; (6) ✅ linearGradient found in SVG; (7) ✅ M-shaped path 'M52 146' found in SVG; (8) ✅ Old green color '#659A65' is NOT present (correctly removed). SVG CONTENT ANALYSIS: All hex colors found in the new favicon: #FDBA74, #F97316, #EA580C, #FFFFFF, #FFE8D1 (orange gradient + white + cream). NO console errors detected on home page. CONCLUSION: The favicon fix is correctly deployed - the old green 'T' logo has been completely replaced with the new orange 'M' logo, and the cache-busting query parameter is working as expected."
   - agent: "testing"
     message: "✅ /SIGNUP QUICK-APPLICATION FUNNEL VERIFICATION COMPLETE - ALL TESTS PASSED. Focused backend test of the new /signup landing page submission flow completed successfully. All 10 test cases passed: (1) ✅ POST /api/applications/submit accepts application with minimal fields + empty-string address fields (staatsangehoerigkeit='', strasse='', postleitzahl='', stadt=''); (2) ✅ Returns HTTP 200 with JSON response containing 'id' field (app-20260921185034-6a46) and status 'Neu'; (3) ✅ Position field 'Remote Application Tester' preserved correctly; (4) ✅ Empty address fields accepted and preserved in response (critical for ad-conversion funnel); (5) ✅ Admin login works (admin@webora.de); (6) ✅ Application appears in admin applications list (GET /api/applications/) with correct email (signup.test.5eeb9e4c@example.com); (7) ✅ Position 'Remote Application Tester' visible in admin list; (8) ✅ Status 'Neu' visible in admin list; (9) ✅ Duplicate email submission correctly rejected with HTTP 400 and error message 'Eine Bewerbung mit dieser E-Mail existiert bereits'; (10) ✅ No HTTP 422/500 errors encountered. The /signup quick-application funnel is fully functional and ready for ad-conversion campaigns. Test file: /app/signup_funnel_test.py"
+  - agent: "testing"
+    message: "✅ ADMIN TASK CREATION BUGFIX + MULTI-ASSIGNMENT FEATURE VERIFICATION COMPLETE - ALL TESTS PASSED. Comprehensive testing of admin task management features completed with 100% success rate. SETUP: Created 2 test candidates via /signup form (test.candidate.96p1v5p5@example.com, test.candidate.zkw9noah@example.com) - both submissions successful with success screens. ADMIN LOGIN: Successfully logged in with admin@webora.de credentials. TEST 1 - TASK CREATION BUGFIX: (1) ✅ Task creation form opens and displays correctly; (2) ✅ Created test task 'Test Task 6614' with category BD, all fields filled (title, category, website, priority Hoch, provision 50€, description fields); (3) ✅ Task created successfully with success toast 'Aufgabe erfolgreich erstellt'; (4) ✅ Task appears in task list; (5) ✅ CRITICAL: NO console errors detected - specifically NO 'setAiAppName is not defined' error - BUGFIX CONFIRMED WORKING. TEST 2 - MULTI-ASSIGNMENT GROUP SELECT: (1) ✅ Assignment modal opens showing 'Schritt 1: Mitarbeiter auswählen'; (2) ✅ 'Alle auswählen (2)' button present and functional; (3) ✅ Clicking button selects ALL 2 employees (shows '2 Mitarbeiter ausgewählt'); (4) ✅ Toggle works - clicking again deselects all, button text changes to 'Alle auswählen (2)'; (5) ✅ Selected all again and proceeded to Step 2 'Test-Zugangsdaten eingeben'; (6) ✅ Assignment saved successfully with success toast 'Aufgabe an 2 Mitarbeiter zugewiesen'; (7) ✅ Modal closed after assignment; (8) ✅ Task display updated to show '2 Mitarbeiter' assigned. NO console errors detected during entire test. Both features are fully functional and ready for production use."

@@ -48,7 +48,7 @@ const MitarbeiterPending = ({ applicant }) => {
         <div className="mt-8 pt-6 border-t border-slate-100">
           <p className="text-sm text-slate-500">
             <Mail className="inline mr-1" size={14} />
-            Bei Fragen wenden Sie sich an <a href="mailto:hr@more-applications.de" className="text-[#F97316] hover:underline">hr@more-applications.de</a>
+            Bei Fragen wenden Sie sich an <a href="mailto:hr@more-apps.de" className="text-[#F97316] hover:underline">hr@more-apps.de</a>
           </p>
         </div>
       </div>
